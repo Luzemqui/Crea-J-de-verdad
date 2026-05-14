@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+            <h4>Inicio</h4>
+            <h4>Sobre nosotros</h4>
+            <h4>Ayuda</h4>
+        </div>
+        <div class="log-in">
+            <ul>
+                <h4>Iniciar sesión</h4>
+                <h4>Registrarse</h4>
+            </ul>
+        </div>
+   <div class="Titulos">
+            <h1>¿Qué es el cáncer y como afecta a las personas psicologicamente?</h1>
+        </div>
+        <div class="content-text">
+            <p> m</p>
+        </div>
+
+
+
+
+
+
+</body>
+</html>
