@@ -1,0 +1,37 @@
+* {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 28, 28);
+    background-color: #FFD7F1;
+}
+
+.tarjeta {
+    width: 500px;          
+    height: 500px;             
+    background-color: #ffffff;
+    padding: 20px;            
+    border: 3px solid rgb(255, 255, 255);    
+    margin: 30px;              
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3); 
+    border-radius: 25px; 
+    justify-self: center;
+    align-items: center;
+}
+
+.title {
+    color: #FFD7F1;
+    justify-content: center;
+    transform: translate3d(169px, 40px, 100px);
+}
+
+.login {
+    transform: translate3d(180px, 400px, 100px);
+    align-items: center;
+}
+
