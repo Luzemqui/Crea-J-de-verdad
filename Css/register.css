@@ -50,8 +50,8 @@ body {
     gap: 15px;
     cursor: pointer;
     background: 135deg, #FFD7F1 100%;
-  box-shadow: 0 4px 15px rgba(117, 7, 93, 0.137);
-  outline: none;
+    box-shadow: 0 4px 15px rgba(117, 7, 93, 0.137);
+    outline: 1px;
 }
 
 .btn {
