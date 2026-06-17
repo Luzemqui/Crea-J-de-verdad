@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFD7F1;
+    background: linear-gradient(90deg,#FFD7F1, #f171ca) ;
     font-size: 20px;
     justify-content: center;
     text-align: center;
@@ -22,7 +22,7 @@ form {
     padding: 60px;
     width: 500px;
     height: 600px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
     margin: 140px auto;
     outline: none;
@@ -30,34 +30,37 @@ form {
 }
 
 .submit-bttn {
-    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
 .submit-bttn button {
-    width: 100%;
-    height: 45px;
+     width: 100%;
+    height: 50px;
     padding: 10px 15px;
-    background: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    background: linear-gradient(#ffd3f2,#ffb8ea);
+    color: #000000;
     font-size: 18px;
     cursor: pointer;
 }
 
 .submit-bttn button:hover {
-    background: #ffd3f2;
     color: #000000;
     border-color: #ffd3f2;
-    box-shadow: 0px 0px 10px  rgb(0, 0, 0);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 185, 255, 0.868);
 }
 
-.name-text{
+.User-text{
     padding: 10px auto;
 }
 
-.Name {
+.username {
     margin: 30px auto;
     background: #ffffff;
     border-radius: 10px;
@@ -69,13 +72,13 @@ form {
     font-size: 18px;
 }
 
-.Name a:hover {
+.username a:hover {
     background: #ffd3f2;
     color: #fff;
     border-color: #f7b2f7;
 }
 
-.Apellidos {
+.password {
     background: rgb(255, 255, 255);
     border-radius: 10px;
     width: 100%;
