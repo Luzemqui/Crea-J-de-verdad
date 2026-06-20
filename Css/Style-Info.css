@@ -1,81 +1,320 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
+ 
 body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #FFD7F1;
-        color:#f171ca ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFD7F1;
+    color: #f171ca;
+    padding: 20px;
 }
-
-.navbar {
-    padding: 45px;
-    box-sizing: 10px;   
-    display: flex;
-    box-sizing: border-box;
+ 
+/* ══════════════════════════════
+   NAVBAR BRAND (logo + Canrisk)
+   ══════════════════════════════ */
+.navbar-brand {
+    padding: 14px 24px;
     border-radius: 20px;
-    background: #ffffff ;
+    background: #ffffff;
+    position: fixed;
+    top: 32px;
+    left: 32px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1001;
+    white-space: nowrap;
+}
+ 
+.navbar-brand h1 {
+    font-size: 1.4rem;
+    color: #f171ca;
+}
+ 
+.C-L {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+ 
+/* ══════════════════════════════
+   NAVBAR PRINCIPAL
+   ══════════════════════════════ */
+.navbar {
+    padding: 14px 24px;
+    border-radius: 20px;
+    background: #ffffff;
+    position: fixed;
+    top: 32px;
+    left: calc(32px + 220px + 16px);
+    right: 32px;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
-    position:fixed;
-    top: 32px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    white-space: nowrap;
 }
-
+ 
+/* ── Botón hamburger (oculto en desktop) ── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 1100;
+}
+ 
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #f171ca;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+ 
+/* Animación hamburger → X */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+/* ── Links de navegación en fila recta ── */
+.Info-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 18px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+ 
+.Info-nav h4 {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+ 
+.Info-nav h4:hover {
+    color: #f171ca;
+}
+ 
+/* ── Grupo derecho: botones + foto ── */
+.right-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2cm;
+}
+ 
+/* ── Botones de sesión ── */
 .Index {
     list-style-type: none;
-    position:fixed;
-    top:41px;
-    left: 540px;
-    text-decoration:none;
-    color:#ffffff
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
-
-.Info {
-    
-}
-
+ 
 .box-I {
-    padding: 10px;
+    padding: 8px 16px;
     background-color: #FFD7F1;
-    box-sizing: border-box;
     border-radius: 10px;
-    margin-bottom: 10px;
+    flex: 0 0 auto;
 }
-
+ 
+.box-I a {
+    text-decoration: none;
+}
+ 
+.box-I h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+}
+ 
+/* ── Foto de perfil ── */
+.Photo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+ 
 .PP-default {
-    width: 100px;
-    height: 100px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
-    position: fixed;
-    top: 35px;
-    left: 675px;
 }
-
+ 
+/* ══════════════════════════════
+   CONTENIDO PRINCIPAL
+   ══════════════════════════════ */
 .Titulos {
     text-align: center;
-    min-height: 25cm ;
+    min-height: 25cm;
     color: rgb(0, 0, 0);
     justify-content: center;
     align-items: center;
     display: flex;
+    padding-top: 130px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
-
+ 
 .content-text {
     justify-content: center;
     align-items: center;
     display: flex;
     box-sizing: border-box;
-    padding: 100px;
+    padding: 60px 100px;
 }
-
+ 
+/* ══════════════════════════════
+   RESPONSIVE — TABLET (≤ 900px)
+   ══════════════════════════════ */
+@media (max-width: 900px) {
+ 
+    /* Los dos navbars se apilan verticalmente */
+    .navbar-brand {
+        top: 16px;
+        left: 16px;
+        width: auto;
+        border-radius: 16px;
+    }
+ 
+    .navbar {
+        top: 90px;           /* debajo del brand */
+        left: 16px;
+        right: 16px;
+        border-radius: 16px;
+        gap: 12px;
+    }
+ 
+    .right-group {
+        gap: 16px;           /* reducir los 2cm en tablet */
+    }
+ 
+    .Titulos {
+        padding-top: 200px;
+    }
+ 
+    .content-text {
+        padding: 40px 40px;
+    }
+}
+ 
+/* ══════════════════════════════
+   RESPONSIVE — MÓVIL (≤ 600px)
+   ══════════════════════════════ */
+@media (max-width: 600px) {
+ 
+    body {
+        padding: 10px;
+    }
+ 
+    /* Brand ocupa todo el ancho */
+    .navbar-brand {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        border-radius: 14px;
+        justify-content: space-between;
+    }
+ 
+    /* Navbar principal: solo hamburger en la barra */
+    .navbar {
+        top: 76px;
+        left: 12px;
+        right: 12px;
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 16px;
+        gap: 0;
+        overflow: hidden;
+        /* Por defecto colapsado */
+        max-height: 44px;
+        transition: max-height 0.35s ease;
+    }
+ 
+    /* Cuando está abierto */
+    .navbar.open {
+        max-height: 400px;
+    }
+ 
+    /* Hamburger visible en móvil */
+    .hamburger {
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 2px;
+    }
+ 
+    /* Info-nav en columna cuando abierto */
+    .Info-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        padding: 12px 0 8px;
+        border-top: 1px solid #FFD7F1;
+        margin-top: 8px;
+    }
+ 
+    /* right-group en columna */
+    .right-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+ 
+    .Index {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+ 
+    .PP-default {
+        width: 40px;
+        height: 40px;
+    }
+ 
+    .Titulos {
+        padding-top: 180px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+ 
+    .Titulos h1 {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+ 
+    .content-text {
+        padding: 24px 16px;
+    }
+ 
+    .content-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #333;
+    }
+}
+ 
