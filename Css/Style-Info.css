@@ -10,10 +10,7 @@ body {
     color: #f171ca;
     padding: 20px;
 }
- 
-/* ══════════════════════════════
-   NAVBAR BRAND (logo + Canrisk)
-   ══════════════════════════════ */
+
 .navbar-brand {
     padding: 14px 24px;
     border-radius: 20px;
@@ -40,9 +37,7 @@ body {
     object-fit: contain;
 }
  
-/* ══════════════════════════════
-   NAVBAR PRINCIPAL
-   ══════════════════════════════ */
+
 .navbar {
     padding: 14px 24px;
     border-radius: 20px;
@@ -60,7 +55,6 @@ body {
     white-space: nowrap;
 }
  
-/* ── Botón hamburger (oculto en desktop) ── */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -81,12 +75,10 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
  
-/* Animación hamburger → X */
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
  
-/* ── Links de navegación en fila recta ── */
 .Info-nav {
     list-style: none;
     display: flex;
@@ -110,7 +102,6 @@ body {
     color: #f171ca;
 }
  
-/* ── Grupo derecho: botones + foto ── */
 .right-group {
     display: flex;
     flex-direction: row;
@@ -118,7 +109,6 @@ body {
     gap: 2cm;
 }
  
-/* ── Botones de sesión ── */
 .Index {
     list-style-type: none;
     display: flex;
@@ -147,7 +137,6 @@ body {
     white-space: nowrap;
 }
  
-/* ── Foto de perfil ── */
 .Photo {
     display: flex;
     align-items: center;
@@ -161,9 +150,7 @@ body {
     object-fit: cover;
 }
  
-/* ══════════════════════════════
-   CONTENIDO PRINCIPAL
-   ══════════════════════════════ */
+
 .Titulos {
     text-align: center;
     min-height: 25cm;
@@ -184,12 +171,8 @@ body {
     padding: 60px 100px;
 }
  
-/* ══════════════════════════════
-   RESPONSIVE — TABLET (≤ 900px)
-   ══════════════════════════════ */
 @media (max-width: 900px) {
  
-    /* Los dos navbars se apilan verticalmente */
     .navbar-brand {
         top: 16px;
         left: 16px;
@@ -198,7 +181,7 @@ body {
     }
  
     .navbar {
-        top: 90px;           /* debajo del brand */
+        top: 90px; 
         left: 16px;
         right: 16px;
         border-radius: 16px;
@@ -206,7 +189,7 @@ body {
     }
  
     .right-group {
-        gap: 16px;           /* reducir los 2cm en tablet */
+        gap: 16px; 
     }
  
     .Titulos {
@@ -218,16 +201,13 @@ body {
     }
 }
  
-/* ══════════════════════════════
-   RESPONSIVE — MÓVIL (≤ 600px)
-   ══════════════════════════════ */
 @media (max-width: 600px) {
  
     body {
         padding: 10px;
     }
  
-    /* Brand ocupa todo el ancho */
+
     .navbar-brand {
         top: 12px;
         left: 12px;
@@ -237,7 +217,7 @@ body {
         justify-content: space-between;
     }
  
-    /* Navbar principal: solo hamburger en la barra */
+    
     .navbar {
         top: 76px;
         left: 12px;
@@ -248,24 +228,21 @@ body {
         padding: 10px 16px;
         gap: 0;
         overflow: hidden;
-        /* Por defecto colapsado */
         max-height: 44px;
         transition: max-height 0.35s ease;
     }
- 
-    /* Cuando está abierto */
     .navbar.open {
         max-height: 400px;
     }
  
-    /* Hamburger visible en móvil */
+
     .hamburger {
         display: flex;
         align-self: flex-end;
         margin-bottom: 2px;
     }
  
-    /* Info-nav en columna cuando abierto */
+
     .Info-nav {
         flex-direction: column;
         align-items: flex-start;
@@ -276,7 +253,7 @@ body {
         margin-top: 8px;
     }
  
-    /* right-group en columna */
+
     .right-group {
         flex-direction: column;
         align-items: flex-start;
