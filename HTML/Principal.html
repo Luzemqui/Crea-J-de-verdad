@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" href="../CSS/Style-Info.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
-    <link rel="stylesheet" href="../Css/Style-Info.css">
+    <link rel="stylesheet" href="../CSS/Style-Info.css">
 </head>
 <body>
- 
 
     <div class="navbar-brand">
         <h1>Canrisk</h1>
-        <img src="" alt="Canrisk" class="C-L">
+        <img src="" alt="Canrisk" class="C-L"> 
     </div>
- 
-    
+
     <nav class="navbar" id="mainNav">
- 
-        
+
         <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
             <span></span>
             <span></span>
@@ -29,18 +26,18 @@
             <li><h4>Sobre nosotros</h4></li>
             <li><h4>Contáctanos</h4></li>
         </ul>
- 
+
         <div class="right-group">
             <ul class="Index">
                 <li class="box-I"><a href="../HTML/login.html"><h4>Iniciar Sesión</h4></a></li>
-                <li class="box-I"><a href="../HTML/registro.html"><h4>Registrarse</h4></a></li>
+                <li class="box-I"><a href="../HTML/register.html"><h4>Registrarse</h4></a></li>
             </ul>
             <div class="Photo">
-                <img src="../BLANK-PHOTOS-TEST/blank-profile-350x350-FFFFFF-circle-user1-80-FFD7F1.png" class="PP-default">
+                <img src="../MULTIMEDIA/profile.png" class="PP-default">
             </div>
 
         </div>
- 
+
     </nav>
     <div class="Titulos">
         <h1>¿Qué es el cáncer y cómo afecta a las personas psicológicamente?</h1>
@@ -52,17 +49,17 @@
             tratándola como la persona que es y no solo como un paciente bajo tratamiento. Evita dar consejos médicos no solicitados o contar historias
             de otros casos que generen presión innecesaria. El silencio acompañado suele ser más reconfortante que las frases hechas o los discursos motivacionales.</p>
     </div>
- 
+
     <script>
         const btn = document.getElementById('hamburgerBtn');
         const nav = document.getElementById('mainNav');
- 
+
         btn.addEventListener('click', () => {
             const isOpen = nav.classList.toggle('open');
             btn.classList.toggle('open', isOpen);
             btn.setAttribute('aria-expanded', isOpen);
         });
     </script>
- 
+
 </body>
 </html>
