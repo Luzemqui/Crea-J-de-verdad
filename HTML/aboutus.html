@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../CSS/Style-Info.css">
+</head>
+<body>
+
+    <div class="navbar-brand">
+        <h1>Canrisk</h1>
+        <img src="../MULTIMEDIA/CANRISKLOGO.jpeg" alt="Canrisk" class="C-L"> 
+    </div>
+
+    <nav class="navbar" id="mainNav">
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="Info-nav">
+            <li><h4>Inicio</h4></li>
+            <li><h4>Sobre nosotros</h4></li>
+            <li><h4>Contáctanos</h4></li>
+        </ul>
+
+        <div class="right-group">
+            <ul class="Index">
+                <li class="box-I"><a href="../HTML/login.html"><h4>Iniciar Sesión</h4></a></li>
+                <li class="box-I"><a href="../HTML/register.html"><h4>Registrarse</h4></a></li>
+                <li class="box-I"><a href="../HTML/aboutus.html"><h4>Sobre nosotros</h4></a></li>
+            </ul>
+            <div class="Photo">
+                <img src="../MULTIMEDIA/profile.png" class="PP-default">
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="Titulos">
+        <h1>Sobre nosotros!</h1>
+    </div>
+    <div class="content-text">
+        <p>Canrisk es un sitio web informativo con la finalidad de 
+            informar a la sociedad de forma accesible y confiable acerca
+            los tipos de cáncer más frecuentes en la población salvadoreña: 
+            el cáncer de mama, cérvix, próstata, estómago y pulmón.
+        </p>
+    </div>
+
+
+    </div>
+    <div class="content-text">
+        <p>Nuestro proyecto recibe el nombre de CANRISK ya que este viene de la combinación de
+         dos palabras muy importantes, las cuales son cáncer (Cáncer) y risk (Riesgo en inglés
+         ), dando la unión Can-Risk. La fusión de ambas palabras fue realizada para darle un
+          enfoque más único y atractivo para los usuarios de nuestra página.</p>
+
+    </div>
+
+
+    <script>
+        const btn = document.getElementById('hamburgerBtn');
+        const nav = document.getElementById('mainNav');
+
+        btn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+    </script>
+
+</body>
+</html>
