@@ -204,10 +204,9 @@ a {
    border-radius: 12px;
    border: 2px solid #D87CA1;
    box-shadow: 0 2px 12px rgba(232, 114, 154, 0.1);
-   margin-left: auto;
-   margin-right: auto;
-   justify-content: center;
-   align-items: center;
+   margin-right: 100px;
+   justify-content:center;
+   align-items:center;
    display: flex;
    box-sizing: border-box;
    padding: 60px 100px;
@@ -221,8 +220,31 @@ a {
 }
 
 .IMG-TXT {
-    display:flex;
-    transform: translate(800px, -590px);
+    max-width: 50px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.fila-texto-img {
+    flex-direction: column;
+}
+
+.fila-texto-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    gap: 40px;
+}
+
+.fila-texto-img .content-text {
+    margin: 0;
+    flex: 1;
+}
+
+.fila-texto-img .IMG {
+    flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
