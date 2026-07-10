@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../../Css/Style-Info.css">
+</head>
+<body>
+
+    <div class="navbar-brand">
+        <h1>Canrisk</h1>
+        <img src="../../MULTIMEDIA/CANRISKLOGO.jpeg" alt="Canrisk" class="C-L"> 
+    </div>
+
+    <nav class="navbar" id="mainNav">
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="Info-nav">
+            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Start</a></h4></li>
+            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>About Us</h4></a></li>
+            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Contact us</h4></a></li>
+
+        </ul>
+
+        <div class="right-group">
+            <ul class="Index">
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Log In</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Sign Up</h4></a></li>
+            </ul>
+            <div class="Photo">
+                <img src="../../MULTIMEDIA/profile.png" class="PP-default">
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="Titulos">
+        <h1>What is cancer, and how does it affect people psychologically?</h1>
+    </div>
+    <div class="content-text">
+        <div class="Start">
+            <p>To support someone with cancer, the key is authentic presence and avoiding forced positivity that invalidates their fears.
+                Listen actively and without judgment, allowing the person to safely express their sadness or anger. Instead of asking
+                "How can I help?", offer concrete actions such as bringing food, cleaning, or running specific errands. Always respect their autonomy,
+                treating them as the person they are rather than just a patient undergoing treatment. Avoid giving unsolicited medical advice or sharing stories
+                about other cases that create unnecessary pressure. Quiet companionship is often more comforting than clichés or motivational speeches.</p>
+        </div>
+    </div>
+
+    <div class="IMG">
+        <img src="../../MULTIMEDIA/image 5.png" alt="Nose wey" class="IMG-TXT">
+    </div>
+
+    <script>
+        const btn = document.getElementById('hamburgerBtn');
+        const nav = document.getElementById('mainNav');
+
+        btn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+    </script>
+
+</body>
+</html>
