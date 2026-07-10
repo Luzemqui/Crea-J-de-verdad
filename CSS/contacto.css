@@ -40,7 +40,6 @@ body {
 }
 
 
-
 .navbar {
   display: flex;
   align-items: center;
@@ -85,6 +84,11 @@ a {
   color: #7D156D;
 }
 
+
+.log-in {
+  margin-left: auto;
+}
+
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -101,10 +105,7 @@ a {
 }
 
 
-
-
 .contacto-main {
-    margin: auto;
   max-width: 720px;
   padding-top: 50px;
   padding-bottom: 60px;
