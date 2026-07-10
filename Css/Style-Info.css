@@ -219,8 +219,8 @@ a {
   text-align: justify;
 }
 
-.IMG-TXT {
-    max-width: 50px;
+.IMG-TEXT{
+    max-width: 550px;
     height: auto;
     border-radius: 12px;
 }
