@@ -56,6 +56,27 @@ form {
     box-shadow: 0 0 20px rgba(255, 185, 255, 0.868);
 }
 
+.regresar {
+    display: block;
+    margin: 20px auto 0;
+    background: #ffb8ea;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.regresar:hover {
+    background: #ffd3f2;
+    border-color: #ffd3f2;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 185, 255, 0.868);
+}
+
 .User-text{
     padding: 10px auto;
 }
