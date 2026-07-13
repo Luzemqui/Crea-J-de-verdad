@@ -45,16 +45,15 @@
             <p>Información clave sobre los cinco tipos de cáncer más comunes. Detectarlos a tiempo salva vidas.</p>
         </div>
  
-
         <div class="cancer-tabs" role="tablist">
-            <a href="#mama" class="tab-link">Mama</a>
-            <a href="#cervix" class="tab-link">Cérvix</a>
-            <a href="#prostata" class="tab-link">Próstata</a>
-            <a href="#pulmon" class="tab-link">Pulmón</a>
-              <a href="#estomago" class="tab-link">Estómago</a>
+            <a href="#mama" class="tab-link" data-target="mama">Mama</a>
+            <a href="#cervix" class="tab-link" data-target="cervix">Cérvix</a>
+            <a href="#prostata" class="tab-link" data-target="prostata">Próstata</a>
+            <a href="#pulmon" class="tab-link" data-target="pulmon">Pulmón</a>
+            <a href="#estomago" class="tab-link" data-target="estomago">Estómago</a>
         </div>
-
-
+ 
+ 
         <section class="cancer-section" id="mama">
             <div class="cancer-header">
                 <div class="icono-cancer" aria-hidden="true">
@@ -96,7 +95,7 @@
             </div>
         </section>
  
-  
+ 
         <section class="cancer-section" id="cervix">
             <div class="cancer-header">
                 <div class="icono-cancer" aria-hidden="true">
@@ -139,7 +138,7 @@
             </div>
         </section>
  
-
+ 
         <section class="cancer-section" id="prostata">
             <div class="cancer-header">
                 <div class="icono-cancer" aria-hidden="true">
@@ -182,7 +181,7 @@
             </div>
         </section>
  
-
+ 
         <section class="cancer-section" id="pulmon">
             <div class="cancer-header">
                 <div class="icono-cancer" aria-hidden="true">
@@ -222,8 +221,8 @@
                 </div>
             </div>
         </section>
-
- <section class="cancer-section" id="estomago">
+ 
+        <section class="cancer-section" id="estomago">
             <div class="cancer-header">
                 <div class="icono-cancer" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -268,13 +267,46 @@
         <div class="cancer-lema">
             <p>La detección temprana es la mejor herramienta contra el cáncer. Consultá siempre con un profesional de la salud.</p>
         </div>
-        
-        </section>
- 
-        <div class="cancer-lema">
-            <p>La detección temprana es la mejor herramienta contra el cáncer. Consultá siempre con un profesional de la salud.</p>
-        </div>
  
     </main>
+ 
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-link');
+            const sections = document.querySelectorAll('.cancer-section');
+ 
+            function showSection(targetId) {
+                
+                sections.forEach(function (section) {
+                    section.classList.remove('active');
+                });
+                tabs.forEach(function (tab) {
+                    tab.classList.remove('active');
+                });
+ 
+                
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                const targetTab = document.querySelector('.tab-link[data-target="' + targetId + '"]');
+                if (targetTab) {
+                    targetTab.classList.add('active');
+                }
+            }
+ 
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault(); // evita el salto brusco por el href="#..."
+                    const targetId = tab.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+ 
+    
+            showSection('mama');
+        });
+    </script>
 </body>
 </html>

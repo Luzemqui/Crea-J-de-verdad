@@ -17,8 +17,8 @@ body {
     background-color: var(--rosa-suave);
     color: var(--texto-oscuro);
 }
-
-
+ 
+ 
 .navbar-brand {
     padding: 0 24px;
     border-radius: 20px;
@@ -34,19 +34,19 @@ body {
     z-index: 1001;
     white-space: nowrap;
 }
-
+ 
 .navbar-brand h1 {
     font-size: 1.4rem;
     color: #f171ca;
 }
-
+ 
 .C-L {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
-
-
+ 
+ 
 .navbar {
   display: flex;
   align-items: center;
@@ -59,8 +59,8 @@ body {
   top: 0;
   z-index: 100;
 }
-
-
+ 
+ 
 .navbar h4 {
   font-size: 0.95rem;
   font-weight: 600;
@@ -70,12 +70,12 @@ body {
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
-
+ 
 a {
     color: inherit;
     text-decoration: none;
 }
-
+ 
 .hamburger {
     display: none;
     flex-direction: column;
@@ -86,20 +86,20 @@ a {
     padding: 4px;
     z-index: 1100;
 }
-
+ 
 .navbar h4:hover {
   color: #7D156D;
 }
-
-
+ 
+ 
 .log-in {
   margin-left: auto;
 }
-
+ 
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+ 
 .Info-nav {
     list-style: none;
     display: flex;
@@ -134,36 +134,67 @@ a {
     margin: 0 auto;
 }
  
-
+ 
+/* ============================================================
+   TABS: ahora son texto simple, no botones
+   ============================================================ */
 .cancer-tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 28px;
     margin-bottom: 40px;
+    border-bottom: 1px solid var(--rosa-borde);
+    padding-bottom: 14px;
 }
  
 .tab-link {
     text-decoration: none;
-    color: var(--rosa-fuerte);
-    background: var(--blanco);
-    border: 2px solid var(--rosa-borde);
-    padding: 8px 20px;
-    border-radius: 30px;
+    color: var(--texto-oscuro);
+    background: none;
+    border: none;
+    padding: 4px 0;
+    border-radius: 0;
     font-weight: 600;
-    transition: all 0.25s ease;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.25s ease;
 }
  
 .tab-link:hover {
-    background: var(--rosa-fuerte);
-    color: var(--blanco);
-    border-color: var(--rosa-fuerte);
+    color: var(--rosa-fuerte);
+    background: none;
 }
  
-
+/* Tab seleccionado: color fuerte + línea debajo */
+.tab-link.active {
+    color: var(--rosa-fuerte);
+}
+ 
+.tab-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--rosa-fuerte);
+}
+ 
+ 
+/* ============================================================
+   SECCIONES: ocultas por defecto, se muestran al hacer clic
+   ============================================================ */
 .cancer-section {
+    display: none;
     margin-bottom: 50px;
     scroll-margin-top: 100px;
+}
+ 
+.cancer-section.active {
+    display: block;
 }
  
 .cancer-header {
@@ -193,7 +224,7 @@ a {
     margin: 0;
 }
  
-
+ 
 .cancer-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -225,7 +256,7 @@ a {
     padding-left: 20px;
 }
  
-
+ 
 .cancer-lema {
     text-align: center;
     margin-top: 30px;
@@ -240,7 +271,7 @@ a {
     font-weight: 600;
 }
  
-
+ 
 @media (max-width: 700px) {
     .cancer-grid {
         grid-template-columns: 1fr;
