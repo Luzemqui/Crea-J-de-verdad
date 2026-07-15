@@ -3,52 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros</title>
+    <title>Cuestionario - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
     <style>
-
-        .contenedor-flex-lateral {
-            display: flex;
-            align-items: center; 
-            justify-content: space-between; 
-            gap: 120px; 
-            max-width: 1700px; 
-            margin: 60px auto;
-            padding: 0 50px; 
-            box-sizing: border-box;
-        }
-
-        .bloque-tarjetas-originales {
-            flex: 1.5; 
-            display: flex;
-            flex-direction: column;
-            gap: 30px; 
-        }
-
-        .imagen-lateral-sobre-nosotros {
-            flex: 1.1; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .imagen-lateral-sobre-nosotros img {
-            width: 100%;
-            max-width: 650px; 
-            height: auto;
-            display: block;
-            border-radius: 28px; 
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
-        }
-
-        @media (max-width: 1100px) {
-            .contenedor-flex-lateral {
-                flex-direction: column-reverse; 
-                gap: 50px;
-                padding: 0 24px;
-            }
-        }
-
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -97,7 +54,7 @@
             bottom: 20px; 
             left: -340px; 
             width: 300px;
-            background-color: #f392bd;  
+            background-color: #f392bd; 
             border: 8px solid #ffffff; 
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
             transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
@@ -122,7 +79,7 @@
         .sidebar-decoracion span {
             width: 4px;
             height: 25px;
-            background-color: #fbd7e7;
+            background-color: #fbd7e7; 
             border-radius: 2px;
             display: block;
         }
@@ -173,12 +130,112 @@
         .overlay-menu.show {
             display: block;
         }
+
+        .fila-texto-img {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .content-text {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .IMG {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .IMG-TXT {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 50px 5%;
+            text-align: center;
+        }
+
+        .btn-quizz {
+            display: inline-block;
+            background-color: #f392bd;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(243, 146, 189, 0.4);
+            transition: all 0.3s ease;
+            border: 3px solid #ffffff;
+        }
+
+        .btn-quizz:hover {
+            transform: translateY(-4px);
+            background-color: #e57fae;
+            box-shadow: 0 8px 25px rgba(243, 146, 189, 0.6);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            padding: 0 5% 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #f392bd;
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555555;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
 
     <div class="navbar-brand">
-
         <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
             <span></span>
             <span></span>
@@ -214,15 +271,15 @@
         </button>
 
         <ul class="Info-nav">
-            <li><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
-            <li><h4><a href="../ESPAÑOL/aboutus.html">Sobre nosotros</a></h4></li>
-            <li><h4><a href="../ESPAÑOL/Contacto.html">Contáctanos</a></h4></li>
+            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
+            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>Sobre nosotros</h4></a></li>
+            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Contáctanos</h4></a></li>
         </ul>
 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="../HTML/login.html"><h4>Iniciar Sesión</h4></a></li>
-                <li class="box-I"><a href="../HTML/register.html"><h4>Registrarse</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Iniciar Sesión</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Registrarse</h4></a></li>
             </ul>
             <div class="Photo">
                 <img src="../../MULTIMEDIA/profile.png" class="PP-default">
@@ -232,34 +289,51 @@
     </nav>
 
     <div class="Titulos">
-        <h1>Sobre nosotros</h1><br>
+        <h1>Cuestionario de Concientización</h1>
     </div>
 
-    <div class="contenedor-flex-lateral">
-
-        <div class="imagen-lateral-sobre-nosotros">
-            <img src="../../MULTIMEDIA/cancer imagen.jpg" alt="Ilustración Canrisk">
-        </div>
-
-        <div class="bloque-tarjetas-originales">
-            <div class="content-text">
-                <p>Canrisk es un sitio web informativo con la finalidad de 
-                    informar a la sociedad de forma accesible y confiable acerca
-                    los tipos de cáncer más frecuentes en la población salvadoreña: 
-                    el cáncer de mama, cérvix, próstata, estómago y pulmón.
-                </p>
-            </div>
-
-            <div class="content-text">
-                <p>Nuestro proyecto recibe el nombre de CANRISK ya que este viene de la combinación de
-                dos palabras muy importantes, las cuales son cáncer (Cáncer) y risk (Riesgo en inglés
-                ), dando la unión Can-Risk. La fusión de ambas palabras fue realizada para darle un
-                enfoque más único y atractivo para los usuarios de nuestra página.</p>
+    <div class="fila-texto-img">
+        <div class="content-text">
+            <div class="Start">
+                <p>¿Qué tanto conocemos realmente sobre el cáncer? Este cuestionario busca evaluar el nivel de información y comprensión general que tiene la comunidad sobre la enfermedad, sus definiciones y los hábitos preventivos clave.</p>
+                <br>
+                <p>Tu participación nos ayuda a identificar áreas críticas donde se requiere mayor difusión de contenido educativo, entender la relación de las personas con los chequeos médicos y fortalecer la empatía colectiva.</p>
             </div>
         </div>
 
+        <div class="IMG">
+            <img src="../../MULTIMEDIA/cancer img.2.jpe" alt="Evaluación de conocimiento sobre el cáncer" class="IMG-TXT">
+        </div>
     </div>
 
+    <div class="action-container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA_wRqpODvoCKK3eUJ1uvN3IjVLjKseehsvB1lB7wfm2d04A/viewform?usp=publish-editor" target="_blank" class="btn-quizz">
+            Responder Cuestionario en Google Forms &rarr;
+        </a>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Concepto y Conocimiento Real</h3>
+            <p>¿Qué es el cáncer para ti? Analizamos la autopercepción que posees de la enfermedad, midiendo si te consideras poco, medianamente o bien informado frente a sus implicaciones.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Prevención y Rutina Médica</h3>
+            <p>La prevención salva vidas. Registramos la frecuencia con la que las personas se realizan chequeos médicos periódicos para evaluar el nivel de proactividad en el cuidado de la salud.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Entorno Hospitalario e Interés</h3>
+            <p>Evaluamos si los usuarios conocen los centros médicos especializados en tratamientos oncológicos y medimos su interés en continuar informándose para apoyar a sus seres queridos.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Empatía y Acompañamiento</h3>
+            <p>Buscamos entender la perspectiva humana y social del proceso, analizando la disposición individual de acompañar, visitar y comprender el día a día de un paciente en tratamiento.</p>
+        </div>
+    </div>
+    
     <script>
         const btn = document.getElementById('hamburgerBtn');
         const nav = document.getElementById('mainNav');
@@ -273,6 +347,7 @@
         const sidebarBtn = document.getElementById('sidebarBtn');
         const sidebarMenu = document.getElementById('sidebarMenu');
         const menuOverlay = document.getElementById('menuOverlay');
+
         const toggleSidebar = () => {
             const isOpen = sidebarMenu.classList.toggle('open');
             sidebarBtn.classList.toggle('open', isOpen);

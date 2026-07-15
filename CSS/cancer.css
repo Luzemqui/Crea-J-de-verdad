@@ -134,10 +134,6 @@ a {
     margin: 0 auto;
 }
  
- 
-/* ============================================================
-   TABS: ahora son texto simple, no botones
-   ============================================================ */
 .cancer-tabs {
     display: flex;
     justify-content: center;
@@ -167,7 +163,7 @@ a {
     background: none;
 }
  
-/* Tab seleccionado: color fuerte + línea debajo */
+
 .tab-link.active {
     color: var(--rosa-fuerte);
 }
@@ -184,9 +180,6 @@ a {
 }
  
  
-/* ============================================================
-   SECCIONES: ocultas por defecto, se muestran al hacer clic
-   ============================================================ */
 .cancer-section {
     display: none;
     margin-bottom: 50px;

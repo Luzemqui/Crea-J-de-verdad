@@ -3,52 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros</title>
+    <title>Introducción al Cáncer - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
     <style>
-
-        .contenedor-flex-lateral {
-            display: flex;
-            align-items: center; 
-            justify-content: space-between; 
-            gap: 120px; 
-            max-width: 1700px; 
-            margin: 60px auto;
-            padding: 0 50px; 
-            box-sizing: border-box;
-        }
-
-        .bloque-tarjetas-originales {
-            flex: 1.5; 
-            display: flex;
-            flex-direction: column;
-            gap: 30px; 
-        }
-
-        .imagen-lateral-sobre-nosotros {
-            flex: 1.1; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .imagen-lateral-sobre-nosotros img {
-            width: 100%;
-            max-width: 650px; 
-            height: auto;
-            display: block;
-            border-radius: 28px; 
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
-        }
-
-        @media (max-width: 1100px) {
-            .contenedor-flex-lateral {
-                flex-direction: column-reverse; 
-                gap: 50px;
-                padding: 0 24px;
-            }
-        }
-
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -97,7 +54,7 @@
             bottom: 20px; 
             left: -340px; 
             width: 300px;
-            background-color: #f392bd;  
+            background-color: #f392bd; 
             border: 8px solid #ffffff; 
             box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
             transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
@@ -122,7 +79,7 @@
         .sidebar-decoracion span {
             width: 4px;
             height: 25px;
-            background-color: #fbd7e7;
+            background-color: #fbd7e7; 
             border-radius: 2px;
             display: block;
         }
@@ -173,12 +130,77 @@
         .overlay-menu.show {
             display: block;
         }
+
+        .fila-texto-img {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-text {
+            flex: 1.2;
+        }
+
+        .IMG {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .IMG-TXT {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #f392bd;
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555555;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
 
     <div class="navbar-brand">
-
         <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
             <span></span>
             <span></span>
@@ -214,15 +236,15 @@
         </button>
 
         <ul class="Info-nav">
-            <li><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
-            <li><h4><a href="../ESPAÑOL/aboutus.html">Sobre nosotros</a></h4></li>
-            <li><h4><a href="../ESPAÑOL/Contacto.html">Contáctanos</a></h4></li>
+            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
+            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>Sobre nosotros</h4></a></li>
+            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Contáctanos</h4></a></li>
         </ul>
 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="../HTML/login.html"><h4>Iniciar Sesión</h4></a></li>
-                <li class="box-I"><a href="../HTML/register.html"><h4>Registrarse</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Iniciar Sesión</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Registrarse</h4></a></li>
             </ul>
             <div class="Photo">
                 <img src="../../MULTIMEDIA/profile.png" class="PP-default">
@@ -232,34 +254,45 @@
     </nav>
 
     <div class="Titulos">
-        <h1>Sobre nosotros</h1><br>
+        <h1>Introducción al Cáncer</h1>
     </div>
 
-    <div class="contenedor-flex-lateral">
-
-        <div class="imagen-lateral-sobre-nosotros">
-            <img src="../../MULTIMEDIA/cancer imagen.jpg" alt="Ilustración Canrisk">
-        </div>
-
-        <div class="bloque-tarjetas-originales">
-            <div class="content-text">
-                <p>Canrisk es un sitio web informativo con la finalidad de 
-                    informar a la sociedad de forma accesible y confiable acerca
-                    los tipos de cáncer más frecuentes en la población salvadoreña: 
-                    el cáncer de mama, cérvix, próstata, estómago y pulmón.
-                </p>
-            </div>
-
-            <div class="content-text">
-                <p>Nuestro proyecto recibe el nombre de CANRISK ya que este viene de la combinación de
-                dos palabras muy importantes, las cuales son cáncer (Cáncer) y risk (Riesgo en inglés
-                ), dando la unión Can-Risk. La fusión de ambas palabras fue realizada para darle un
-                enfoque más único y atractivo para los usuarios de nuestra página.</p>
+    <div class="fila-texto-img">
+        <div class="content-text">
+            <div class="Start">
+                <p>El cáncer no es una única enfermedad, sino un término amplio utilizado para describir a un grupo de más de 200 enfermedades diferentes caracterizadas por el crecimiento descontrolado y la propagación de células anormales en el cuerpo. Si este proceso no se controla o se detecta a tiempo, puede comprometer el funcionamiento de órganos vitales y extenderse a otras partes del cuerpo.</p>
+                <br>
+                <p>Comprender las bases del desarrollo celular, los factores de riesgo y la importancia del diagnóstico precoz es el primer paso fundamental para la prevención, el acompañamiento integral de los pacientes y la reducción de riesgos asociados.</p>
             </div>
         </div>
 
+        <div class="IMG">
+            <img src="../../MULTIMEDIA/cancer img 1.webp" alt="Concepto de células" class="IMG-TXT">
+        </div>
     </div>
 
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>¿Cómo se origina?</h3>
+            <p>Comienza cuando los mecanismos de control del ADN celular sufren mutaciones. En lugar de envejecer y morir, estas células dañadas sobreviven y continúan dividiéndose sin freno, pudiendo llegar a formar masas llamadas tumores.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Prevención</h3>
+            <p>Muchos tipos de cáncer se pueden prevenir o mitigar adoptando hábitos saludables: mantener una alimentación balanceada, evitar el consumo de tabaco y alcohol, proteger la piel del sol y realizar actividad física diaria.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Detección Temprana</h3>
+            <p>Identificar anomalías en etapas tempranas mediante autoexploraciones, mamografías o chequeos rutinarios incrementa significativamente la efectividad de los tratamientos médicos actuales.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Tratamientos Comunes</h3>
+            <p>Dependiendo del tipo y etapa del diagnóstico, los tratamientos varían e incluyen enfoques como la cirugía, quimioterapia, radioterapia, inmunoterapia y terapias dirigidas, enfocadas en frenar o erradicar las células afectadas.</p>
+        </div>
+    </div>
+    
     <script>
         const btn = document.getElementById('hamburgerBtn');
         const nav = document.getElementById('mainNav');
@@ -273,6 +306,7 @@
         const sidebarBtn = document.getElementById('sidebarBtn');
         const sidebarMenu = document.getElementById('sidebarMenu');
         const menuOverlay = document.getElementById('menuOverlay');
+
         const toggleSidebar = () => {
             const isOpen = sidebarMenu.classList.toggle('open');
             sidebarBtn.classList.toggle('open', isOpen);

@@ -7,38 +7,41 @@
 body {
   background-color: #FFD7F1;
   font-family: system-ui, -apple-system, sans-serif;
-  color: #ffd7f1;
+  color: #ffd7f1; 
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .navbar-brand {
-    padding: 0 24px;
-    border-radius: 20px;
-    background: #ffffff;
-    position: fixed;
-    top: 16px;
-    left: 32px;
-    width: 220px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 1001;
-    white-space: nowrap;
+  padding: 0 24px;
+  border-radius: 20px;
+  background: #ffffff;
+  position: fixed;
+  top: 16px;
+  left: 32px;
+  width: 220px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+  white-space: nowrap;
 }
 
 .navbar-brand h1 {
-    font-size: 1.4rem;
-    color: #f171ca;
+  font-size: 1.4rem;
+  color: #f171ca;
 }
 
 .C-L {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
-
 
 .navbar {
   display: flex;
@@ -53,62 +56,104 @@ body {
   z-index: 100;
 }
 
-
 .navbar h4 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #B94E8A;
   cursor: pointer;
-  text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-    z-index: 1100;
 }
 
 .navbar h4:hover {
   color: #7D156D;
 }
 
-
-.log-in {
-  margin-left: auto;
-}
-
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
 .Info-nav {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 18px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
+
+.right-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2cm;
+  margin-left: auto; 
+}
+
+.Index {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.box-I {
+  padding: 8px 16px;
+  background-color: #FFD7F1;
+  border-radius: 10px;
+  flex: 0 0 auto;
+}
+
+.box-I h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff; 
+  white-space: nowrap;
+}
+
+.Photo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.PP-default {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #B94E8A;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 
 .contacto-main {
-  max-width: 720px;
-  padding-top: 50px;
-  padding-bottom: 60px;
+  max-width: 1080px;
+  margin: 40px auto; 
+  padding: 0 20px;
 }
 
 .contacto-intro {
@@ -125,9 +170,9 @@ a {
 
 .contacto-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .contacto-card {
@@ -139,7 +184,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; 
   gap: 8px;
+  height: 100%; 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -166,7 +213,7 @@ a {
 }
 
 .contacto-card h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #737574;
   margin-bottom: 2px;
 }
@@ -185,7 +232,7 @@ a {
 }
 
 .contacto-lema {
-  background: #645f60;
+  background: #ffffff;
   border-radius: 10px;
   padding: 26px 20px;
   text-align: center;
@@ -193,8 +240,43 @@ a {
 }
 
 .contacto-lema p {
-  color: #f9f9f9;
+  color: #454946;
   font-size: 1.05rem;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 10px;
+  }
+
+  .navbar-brand {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    border-radius: 14px;
+    justify-content: space-between;
+  }
+
+  .navbar {
+    top: 76px;
+    left: 12px;
+    right: 12px;
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 0;
+    overflow: hidden;
+    max-height: 44px;
+    transition: max-height 0.35s ease;
+  }
+}
+
+@media (max-width: 650px) {
+  .contacto-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

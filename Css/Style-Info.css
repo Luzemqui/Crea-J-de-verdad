@@ -105,6 +105,14 @@ a {
     padding: 0;
 }
 
+.right-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2cm;
+  margin-left: auto;
+}
+
 .log-in ul {
   display: flex;
   gap: 1rem;
