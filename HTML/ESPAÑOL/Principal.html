@@ -4,8 +4,260 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal - Canrisk</title>
-    <link rel="stylesheet" href="../../CSS/Style-Info.css">
-    <link rel="stylesheet" href="../../CSS/navbar.css">
+    <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <style>
+        /* --- Estructura y Navegación --- */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd; 
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+
+        /* --- SECCIÓN PRINCIPAL REFORMULADA (SIN FONDO BLANCO DURO) --- */
+
+        /* Sección Hero */
+        .hero-section {
+            background: transparent; /* Removido el gradiente blanco de fondo */
+            padding: 80px 5% 40px 5%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2.8rem;
+            color: #d65a94;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2rem;
+            color: #555555;
+            max-width: 750px;
+            line-height: 1.6;
+            margin: 10px 0 25px 0;
+        }
+
+        /* Botón Único: Conocer sobre los tipos de cáncer */
+        .btn-cancer {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #d65a94;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 15px 35px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(214, 90, 148, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-cancer:hover {
+            background-color: #ffffff;
+            color: #d65a94;
+            border: 2px solid #d65a94;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(214, 90, 148, 0.2);
+        }
+
+        /* Contenedor de Información de Acompañamiento */
+        .info-row-container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 5%;
+        }
+
+        .info-row-title {
+            color: #d65a94;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .fila-texto-img {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            background-color: transparent; /* Removido el fondo blanco */
+            border: 2px solid #f392bd;
+            border-radius: 35px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .Start p {
+            font-family: 'Segoe UI', sans-serif;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .IMG {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .IMG-TXT {
+            max-width: 100%;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .fila-texto-img {
+                flex-direction: column-reverse;
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 

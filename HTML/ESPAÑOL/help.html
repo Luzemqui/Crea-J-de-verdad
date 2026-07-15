@@ -4,8 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Ayuda - Canrisk</title>
-    <link rel="stylesheet" href="../../CSS/Style-Info.css">
-    <link rel="stylesheet" href="../../CSS/navbar.css">
+    <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <style>
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd; 
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7; 
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            padding: 50px 5% 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .help-card {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 35px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .help-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 25px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .help-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .help-info h3 {
+            margin: 0;
+            color: #d65a94;
+            font-size: 1.4rem;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fbd7e7;
+            padding: 6px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .help-desc {
+            background-color: #fdf0f5;
+            color: #555555;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .help-desc strong {
+            color: #d65a94;
+        }
+
+        .progress-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: #d65a94;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 14px;
+            background-color: #fbd7e7;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ffffff;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f392bd, #d65a94);
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 

@@ -5,7 +5,351 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información sobre el Cáncer - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
-    <link rel="stylesheet" href="../../CSS/navbar.css">
+    <style>
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd; 
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+
+        .cancer-main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 5%;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .cancer-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cancer-intro h2 {
+            font-size: 2.5rem;
+            color: #d65a94;
+            margin-bottom: 10px;
+        }
+
+        .cancer-intro p {
+            font-size: 1.1rem;
+            color: #555555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+  
+        .cancer-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .tab-link {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #d65a94;
+            background-color: transparent;
+            border: 2px solid #f392bd;
+            padding: 12px 24px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-link:hover, .tab-link.active {
+            background-color: #d65a94;
+            color: #ffffff;
+            border-color: #d65a94;
+            box-shadow: 0 5px 15px rgba(214, 90, 148, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .cancer-section {
+            display: none; 
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .cancer-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .cancer-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .icono-cancer {
+            width: 50px;
+            height: 50px;
+            color: #d65a94;
+            background-color: #fbd7e7;
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icono-cancer svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cancer-header h3 {
+            font-size: 2rem;
+            color: #d65a94;
+            margin: 0;
+        }
+
+        .cancer-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background-color: transparent;
+            border: 2px solid #f392bd;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(243, 146, 189, 0.12);
+        }
+
+        .info-card summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #d65a94;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .info-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .info-card summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #d65a94;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .info-card[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .info-card summary:hover {
+            background-color: #fff6f9;
+        }
+
+        .info-card-content {
+            padding: 0 30px 30px 30px;
+            border-top: 1px solid #fbd7e7;
+            padding-top: 20px;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card-content p, .info-card-content ul {
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .info-card-content ul {
+            padding-left: 20px;
+        }
+
+        .info-card-content li {
+            margin-bottom: 10px;
+        }
+
+        .info-card-content li::marker {
+            color: #f392bd;
+        }
+
+        .cancer-lema {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .cancer-lema p {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #d65a94;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cancer-intro h2 {
+                font-size: 2rem;
+            }
+            .cancer-header h3 {
+                font-size: 1.6rem;
+            }
+            .info-card summary {
+                padding: 18px 20px;
+                font-size: 1.1rem;
+            }
+            .info-card-content {
+                padding: 0 20px 20px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
