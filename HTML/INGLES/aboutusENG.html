@@ -3,15 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About us</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <style>
+
+        .contenedor-flex-lateral {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 120px; 
+            max-width: 1700px; 
+            margin: 60px auto;
+            padding: 0 50px; 
+            box-sizing: border-box;
+        }
+
+        .bloque-tarjetas-originales {
+            flex: 1.5; 
+            display: flex;
+            flex-direction: column;
+            gap: 30px; 
+        }
+
+        .imagen-lateral-sobre-nosotros {
+            flex: 1.1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imagen-lateral-sobre-nosotros img {
+            width: 100%;
+            max-width: 650px; 
+            height: auto;
+            display: block;
+            border-radius: 28px; 
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
+        }
+
+        @media (max-width: 1100px) {
+            .contenedor-flex-lateral {
+                flex-direction: column-reverse; 
+                gap: 50px;
+                padding: 0 24px;
+            }
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd;  
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
     <div class="navbar-brand">
+
+        <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <h1>Canrisk</h1>
         <img src="../../MULTIMEDIA/Canrisk LOGO.png" alt="Canrisk" class="C-L"> 
     </div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-decoracion">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="sidebar-list">
+            <li><a href="cancer-intro.html">Introduction to cancer &rarr;</a></li>
+            <li><a href="psycho-help.html">Psychological help &rarr;</a></li>
+            <li><a href="help.html">Help center &rarr;</a></li>
+            <li><a href="quizz.html">Quizz &rarr;</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay-menu" id="menuOverlay"></div>
 
     <nav class="navbar" id="mainNav">
 
@@ -22,47 +214,51 @@
         </button>
 
         <ul class="Info-nav">
-            <li><h4>Start</h4></li>
-            <li><h4>About Us</h4></li>
-            <li><h4>Contact Us</h4></li>
+            <li><h4><a href="../INGLES/PrincipalING.html">Homepage</a></h4></li>
+            <li><h4><a href="../INGLES/aboutusENG.html">About us</a></h4></li>
+            <li><h4><a href="../INGLES/ContactoING.html">Contact us</a></h4></li>
         </ul>
 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="../HTML/login.html"><h4>Log in</h4></a></li>
-                <li class="box-I"><a href="../HTML/register.html"><h4>Register</h4></a></li>
-                <li class="box-I"><a href="../HTML/aboutus.html"><h4>About Us</h4></a></li>
+                <li class="box-I"><a href="../ESPAÑOL/login.html"><h4>Log in</h4></a></li>
+                <li class="box-I"><a href="../ESPAÑOL/register.html"><h4>Register</h4></a></li>
             </ul>
             <div class="Photo">
                 <img src="../../MULTIMEDIA/profile.png" class="PP-default">
             </div>
-
         </div>
 
     </nav>
 
     <div class="Titulos">
-        <h1>About Us</h1>
+        <h1>About us</h1><br>
     </div>
-    <div class="content-text">
-        <p> Canrisk is an informative website with the purpose of 
+
+    <div class="contenedor-flex-lateral">
+
+        <div class="imagen-lateral-sobre-nosotros">
+            <img src="../../MULTIMEDIA/cancer imagen.jpg" alt="Ilustración Canrisk">
+        </div>
+
+        <div class="bloque-tarjetas-originales">
+            <div class="content-text">
+                <p>Canrisk is an informative website with the purpose of 
             informing the society in an accessible and reliable way about
             the most common types of cancer in the Salvadoran population: 
             breast, cervical, prostate, stomach and lung cancer.
+                </p>
+            </div>
 
-        </p>
-    </div>
-
-
-    </div>
-    <div class="content-text">
-        <p>Our project is called CANRISK because it comes from the combination of
+            <div class="content-text">
+                <p>Our project is called CANRISK because it comes from the combination of
          two important words, which are cancer (Cáncer) and risk, 
          giving the union Can-Risk. The fusion of both words was done to give it a
          more unique and attractive approach for our website users.</p>
+            </div>
+        </div>
 
     </div>
-
 
     <script>
         const btn = document.getElementById('hamburgerBtn');
@@ -73,6 +269,18 @@
             btn.classList.toggle('open', isOpen);
             btn.setAttribute('aria-expanded', isOpen);
         });
+
+        const sidebarBtn = document.getElementById('sidebarBtn');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const toggleSidebar = () => {
+            const isOpen = sidebarMenu.classList.toggle('open');
+            sidebarBtn.classList.toggle('open', isOpen);
+            menuOverlay.classList.toggle('show', isOpen);
+        };
+
+        sidebarBtn.addEventListener('click', toggleSidebar);
+        menuOverlay.addEventListener('click', toggleSidebar);
     </script>
 
 </body>
