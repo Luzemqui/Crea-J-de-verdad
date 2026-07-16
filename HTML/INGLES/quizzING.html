@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario - Canrisk</title>
+    <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
+    <style>
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd; 
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7; 
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+
+        .fila-texto-img {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .content-text {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .IMG {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .IMG-TXT {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .action-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 50px 5%;
+            text-align: center;
+        }
+
+        .btn-quizz {
+            display: inline-block;
+            background-color: #f392bd;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(243, 146, 189, 0.4);
+            transition: all 0.3s ease;
+            border: 3px solid #ffffff;
+        }
+
+        .btn-quizz:hover {
+            transform: translateY(-4px);
+            background-color: #e57fae;
+            box-shadow: 0 8px 25px rgba(243, 146, 189, 0.6);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            padding: 0 5% 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border: 2px solid #f392bd;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #f392bd;
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555555;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar-brand">
+        <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1>Canrisk</h1>
+        <img src="../../MULTIMEDIA/Canrisk LOGO.png" alt="Canrisk" class="C-L"> 
+    </div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-decoracion">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="sidebar-list">
+            <li><a href="cancer-intro.html">Introducción al cáncer &rarr;</a></li>
+            <li><a href="psycho-help.html">Apoyo psicológico &rarr;</a></li>
+            <li><a href="help.html">Centro de ayuda &rarr;</a></li>
+            <li><a href="quizz.html">Cuestionario &rarr;</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay-menu" id="menuOverlay"></div>
+
+    <nav class="navbar" id="mainNav">
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="Info-nav">
+            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
+            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>Sobre nosotros</h4></a></li>
+            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Contáctanos</h4></a></li>
+        </ul>
+
+        <div class="right-group">
+            <ul class="Index">
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Iniciar Sesión</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Registrarse</h4></a></li>
+            </ul>
+            <div class="Photo">
+                <img src="../../MULTIMEDIA/profile.png" class="PP-default">
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="Titulos">
+        <h1>Cuestionario de Concientización</h1>
+    </div>
+
+    <div class="fila-texto-img">
+        <div class="content-text">
+            <div class="Start">
+                <p>¿Qué tanto conocemos realmente sobre el cáncer? Este cuestionario busca evaluar el nivel de información y comprensión general que tiene la comunidad sobre la enfermedad, sus definiciones y los hábitos preventivos clave.</p>
+                <br>
+                <p>Tu participación nos ayuda a identificar áreas críticas donde se requiere mayor difusión de contenido educativo, entender la relación de las personas con los chequeos médicos y fortalecer la empatía colectiva.</p>
+            </div>
+        </div>
+
+        <div class="IMG">
+            <img src="../../MULTIMEDIA/cancer img.2.jpe" alt="Evaluación de conocimiento sobre el cáncer" class="IMG-TXT">
+        </div>
+    </div>
+
+    <div class="action-container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeA_wRqpODvoCKK3eUJ1uvN3IjVLjKseehsvB1lB7wfm2d04A/viewform?usp=publish-editor" target="_blank" class="btn-quizz">
+            Responder Cuestionario en Google Forms &rarr;
+        </a>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Concepto y Conocimiento Real</h3>
+            <p>¿Qué es el cáncer para ti? Analizamos la autopercepción que posees de la enfermedad, midiendo si te consideras poco, medianamente o bien informado frente a sus implicaciones.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Prevención y Rutina Médica</h3>
+            <p>La prevención salva vidas. Registramos la frecuencia con la que las personas se realizan chequeos médicos periódicos para evaluar el nivel de proactividad en el cuidado de la salud.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Entorno Hospitalario e Interés</h3>
+            <p>Evaluamos si los usuarios conocen los centros médicos especializados en tratamientos oncológicos y medimos su interés en continuar informándose para apoyar a sus seres queridos.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Empatía y Acompañamiento</h3>
+            <p>Buscamos entender la perspectiva humana y social del proceso, analizando la disposición individual de acompañar, visitar y comprender el día a día de un paciente en tratamiento.</p>
+        </div>
+    </div>
+    
+    <script>
+        const btn = document.getElementById('hamburgerBtn');
+        const nav = document.getElementById('mainNav');
+
+        btn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+
+        const sidebarBtn = document.getElementById('sidebarBtn');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        const toggleSidebar = () => {
+            const isOpen = sidebarMenu.classList.toggle('open');
+            sidebarBtn.classList.toggle('open', isOpen);
+            menuOverlay.classList.toggle('show', isOpen);
+        };
+
+        sidebarBtn.addEventListener('click', toggleSidebar);
+        menuOverlay.addEventListener('click', toggleSidebar);
+    </script>
+
+</body>
+</html>
