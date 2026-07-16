@@ -3,15 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Principal - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
+    <style>
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger-sidebar-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            padding: 0;
+            z-index: 1100;
+        }
+
+        .hamburger-sidebar-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #f392bd; 
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: #f392bd; 
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-sidebar-btn.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: #f392bd; 
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 20px; 
+            bottom: 20px; 
+            left: -340px; 
+            width: 300px;
+            background-color: #f392bd; 
+            border: 8px solid #ffffff; 
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+            transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            z-index: 1000;
+            padding: 95px 20px 30px 25px;
+            box-sizing: border-box;
+            border-radius: 45px; 
+        }
+
+        .sidebar-menu.open {
+            left: 20px; 
+        }
+
+        .sidebar-decoracion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .sidebar-decoracion span {
+            width: 4px;
+            height: 25px;
+            background-color: #fbd7e7;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .sidebar-list li {
+            border: none;
+        }
+
+        .sidebar-list a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 10px;
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 700; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            transform: translateX(5px); 
+            color: #fff0f5; 
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay-menu.show {
+            display: block;
+        }
+
+        .hero-section {
+            background: transparent; 
+            padding: 80px 5% 40px 5%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2.8rem;
+            color: #d65a94;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2rem;
+            color: #555555;
+            max-width: 750px;
+            line-height: 1.6;
+            margin: 10px 0 25px 0;
+        }
+
+        .btn-cancer {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #d65a94;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 15px 35px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(214, 90, 148, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-cancer:hover {
+            background-color: #ffffff;
+            color: #d65a94;
+            border: 2px solid #d65a94;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(214, 90, 148, 0.2);
+        }
+
+        .info-row-container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 5%;
+        }
+
+        .info-row-title {
+            color: #d65a94;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .fila-texto-img {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            background-color: transparent; 
+            border: 2px solid #f392bd;
+            border-radius: 35px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .Start p {
+            font-family: 'Segoe UI', sans-serif;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .IMG {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .IMG-TXT {
+            max-width: 100%;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .fila-texto-img {
+                flex-direction: column-reverse;
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="navbar-brand">
+        <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <h1>Canrisk</h1>
         <img src="../../MULTIMEDIA/Canrisk LOGO.png" alt="Canrisk" class="C-L"> 
     </div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-decoracion">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="sidebar-list">
+            <li><a href="cancer-intro.html">Introduction to cancer &rarr;</a></li>
+            <li><a href="cancer.html" style="color: #ffffff; font-weight: 800;">Tipes of Cáncer &rarr;</a></li>
+            <li><a href="psycho-help.html">Psychological support &rarr;</a></li>
+            <li><a href="help.html">Help center &rarr;</a></li>
+            <li><a href="quizz.html">uestionary &rarr;</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay-menu" id="menuOverlay"></div>
 
     <nav class="navbar" id="mainNav">
 
@@ -22,43 +293,56 @@
         </button>
 
         <ul class="Info-nav">
-            <li class="box-II"><h4><a href="../INGLES/PrincipalING.html">Start</a></h4></li>
-            <li class="box-II"><a href="../INGLES/aboutusENG.html"><h4>About Us</h4></a></li>
-            <li class="box-II"><a href="../INGLES/ContactoING.html"><h4>Contact us</h4></a></li>
-
+            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Start</a></h4></li>
+            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>About Us</h4></a></li>
+            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Cotact us</h4></a></li>
         </ul>
 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="INGLES/loginING.html"><h4>Log In</h4></a></li>
-                <li class="box-I"><a href="../INGLES/registerING.html"><h4>Sign Up</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Log in</h4></a></li>
+                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Sign in</h4></a></li>
             </ul>
             <div class="Photo">
                 <img src="../../MULTIMEDIA/profile.png" class="PP-default">
             </div>
-
         </div>
 
     </nav>
-   <div class="Titulos">
-        <h1>What is cancer, and how does it affect people psychologically?</h1>
-    </div>
 
-<div class="fila-texto-img">
-    <div class="content-text">
-        <div class="Start">
-            <p>To support someone with cancer, the key is authentic presence and avoiding forced positivity that invalidates their fears.
-                Listen actively and without judgment, allowing the person to safely express their sadness or anger. Instead of asking
-                "How can I help?", offer concrete actions such as bringing food, cleaning, or running specific errands. Always respect their autonomy,
-                treating them as the person they are rather than just a patient undergoing treatment. Avoid giving unsolicited medical advice or sharing stories
-                about other cases that create unnecessary pressure. Quiet companionship is often more comforting than clichés or motivational speeches.</p>
+    <header class="hero-section">
+        <div class="hero-container">
+            <h1 class="hero-title">Assessment, Support, and Hope</h1>
+            <p class="hero-subtitle">
+               Welcome to Canrisk. We are a platform dedicated to providing prevention tools, emotional support, and assistance for young people and families facing cancer.
+            </p>
+            <a href="cancer.html" class="btn-cancer">
+                <span>Knowing the types of cancer</span> &rarr;
+            </a>
         </div>
-    </div>
+    </header>
 
-    <div class="IMG">
-                 <img src="../../MULTIMEDIA/image 5.png" alt="Nose wey" class="IMG-TXT">
+    <section class="info-row-container">
+        <h2 class="info-row-title">Accompaniment on the Journey</h2>
+        <div class="fila-texto-img">
+            <div class="content-text">
+                <div class="Start">
+                    <p>
+                        To support someone with cancer, the key is authentic presence and avoiding forced positivity that invalidates their fears
+                        Listen actively without judgment, allowing the person to safely express their sadness or anger. Instead of asking
+                        "How can I help?" offers specific actions such as bringing food, cleaning, or running specific errands.
+                    </p>
+                    <p style="margin-top: 15px;">
+                       Always respect her autonomy, treating her as the person she is and not just as a patient undergoing treatment. Avoid giving unsolicited medical advice or sharing stories of other cases that might create unnecessary pressure. Silent support is often more comforting than platitudes or motivational speeches. 
+                    </p>
+                </div>
             </div>
- </div>
+
+            <div class="IMG">
+                <img src="../../MULTIMEDIA/image 5.png" alt="Acompañamiento y Empatía" class="IMG-TXT">
+            </div>
+        </div>
+    </section>
 
     <script>
         const btn = document.getElementById('hamburgerBtn');
@@ -69,6 +353,19 @@
             btn.classList.toggle('open', isOpen);
             btn.setAttribute('aria-expanded', isOpen);
         });
+
+        const sidebarBtn = document.getElementById('sidebarBtn');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        const toggleSidebar = () => {
+            const isOpen = sidebarMenu.classList.toggle('open');
+            sidebarBtn.classList.toggle('open', isOpen);
+            menuOverlay.classList.toggle('show', isOpen);
+        };
+
+        sidebarBtn.addEventListener('click', toggleSidebar);
+        menuOverlay.addEventListener('click', toggleSidebar);
     </script>
 
 </body>
