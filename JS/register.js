@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("📋 Usuarios registrados:", usuarios);
     alert(`¡Registro exitoso! Bienvenido, ${name} 🎉`);
 
-    window.location.href = "../HTML/login.html"; 
+    window.location.href = "../ESPAÑOL/login.html"; 
   });
 
   function validarNombre(name) {

@@ -16,7 +16,7 @@ function loginUser(e) {
 
   if (foundUser) {
     localStorage.setItem('userSession', JSON.stringify({ type: 'users', username }));
-    window.location.href = '../HTML/Principal.html';
+    window.location.href = '../ESPAÑOL/Principal.html';
   } else {
     alert('Credenciales inválidas');
   }
