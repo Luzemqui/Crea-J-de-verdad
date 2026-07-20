@@ -3,15 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   background-color: #FFD7F1;
   font-family: system-ui, -apple-system, sans-serif;
   color: #ffd7f1;
   min-height: 100vh;
 }
-
-
+ 
+ 
 .navbar-brand {
     padding: 0 24px;
     border-radius: 20px;
@@ -27,20 +27,20 @@ body {
     z-index: 1001;
     white-space: nowrap;
 }
-
+ 
 .navbar-brand h1 {
     font-size: 1.4rem;
     color: #f171ca;
 }
-
+ 
 .C-L {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
-
-
-
+ 
+ 
+ 
 .navbar {
   display: flex;
   align-items: center;
@@ -53,8 +53,8 @@ body {
   top: 0;
   z-index: 100;
 }
-
-
+ 
+ 
 .navbar h4 {
   font-size: 0.95rem;
   font-weight: 600;
@@ -64,12 +64,12 @@ body {
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
-
+ 
 a {
     color: inherit;
     text-decoration: none;
 }
-
+ 
 .hamburger {
     display: none;
     flex-direction: column;
@@ -80,20 +80,20 @@ a {
     padding: 4px;
     z-index: 1100;
 }
-
+ 
 .navbar h4:hover {
   color: #7D156D;
 }
-
-
+ 
+ 
 .log-in {
   margin-left: auto;
 }
-
+ 
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+ 
 .Info-nav {
     list-style: none;
     display: flex;
@@ -104,7 +104,7 @@ a {
     margin: 0;
     padding: 0;
 }
-
+ 
 .right-group {
   display: flex;
   flex-direction: row;
@@ -112,14 +112,14 @@ a {
   gap: 2cm;
   margin-left: auto;
 }
-
+ 
 .log-in ul {
   display: flex;
   gap: 1rem;
   list-style: none;
   align-items: center;
 }
-
+ 
 .log-in h4 {
   font-size: 0.9rem;
   font-weight: 600;
@@ -130,21 +130,21 @@ a {
   border-radius: 20px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-
+ 
+ 
 .log-in h4:hover {
   background-color: #B94E8A;
   color: #fff;
 }
-
-
+ 
+ 
 .right-group {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2cm;
 }
-
+ 
 .Index {
     list-style-type: none;
     display: flex;
@@ -154,46 +154,46 @@ a {
     margin: 0;
     padding: 0;
 }
-
+ 
 .box-I {
     padding: 8px 16px;
     background-color: #FFD7F1;
     border-radius: 10px;
     flex: 0 0 auto;
 }
-
+ 
 .box-I a {
     text-decoration: none;
 }
-
+ 
 .box-I h4 {
     font-size: 0.85rem;
     font-weight: 600;
     color: #fff;
     white-space: nowrap;
 }
-
+ 
 .Photo {
     display: flex;
     align-items: center;
     flex: 0 0 auto;
 }
-
+ 
 .PP-default {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
 }
-
-
+ 
+ 
 .Titulos {
    max-width: 780px;
    margin: 3rem auto 1.5rem auto;
    padding: 0 2rem;
    text-align: center;
 }
-
+ 
 .Titulos h1 {
    font-family: Georgia, 'Times New Roman', serif;
    font-size: 1.85rem;
@@ -202,8 +202,8 @@ a {
    line-height: 1.35;
    letter-spacing: -0.01em;
 }
-
-
+ 
+ 
 .content-text {
    max-width: 780px;
    margin: 0 auto 4rem auto;
@@ -219,24 +219,24 @@ a {
    box-sizing: border-box;
    padding: 60px 100px;
 }
-
+ 
 .content-text p {
   font-size: 1.05rem;
   line-height: 1.75;
   color: #5C2A3A;
   text-align: justify;
 }
-
+ 
 .IMG-TEXT{
     max-width: 550px;
     height: auto;
     border-radius: 12px;
 }
-
+ 
 .fila-texto-img {
     flex-direction: column;
 }
-
+ 
 .fila-texto-img {
     display: flex;
     align-items: center;
@@ -245,25 +245,25 @@ a {
     margin: 0 auto 4rem auto;
     gap: 40px;
 }
-
+ 
 .fila-texto-img .content-text {
     margin: 0;
     flex: 1;
 }
-
+ 
 .fila-texto-img .IMG {
     flex-shrink: 0;
 }
-
+ 
 @media (max-width: 900px) {
-
+ 
     .navbar-brand {
         top: 16px;
         left: 16px;
         width: auto;
         border-radius: 16px;
     }
-
+ 
     .navbar {
         top: 90px;
         left: 16px;
@@ -271,25 +271,25 @@ a {
         border-radius: 16px;
         gap: 12px;
     }
-
+ 
     .right-group {
         gap: 16px;
     }
-
+ 
     .Titulos {
         padding-top: 200px;
     }
-
+ 
     .content-text {
         padding: 40px 40px;
     }
-
-
+ 
+ 
     body {
         padding: 10px;
     }
-
-
+ 
+ 
     .navbar-brand {
         top: 12px;
         left: 12px;
@@ -298,8 +298,8 @@ a {
         border-radius: 14px;
         justify-content: space-between;
     }
-
-
+ 
+ 
     .navbar {
         top: 76px;
         left: 12px;
@@ -316,15 +316,15 @@ a {
     .navbar.open {
         max-height: 400px;
     }
-
-
+ 
+ 
     .hamburger {
         display: flex;
         align-self: flex-end;
         margin-bottom: 2px;
     }
-
-
+ 
+ 
     .Info-nav {
         flex-direction: column;
         align-items: flex-start;
@@ -334,8 +334,8 @@ a {
         border-top: 1px solid #FFD7F1;
         margin-top: 8px;
     }
-
-
+ 
+ 
     .right-group {
         flex-direction: column;
         align-items: flex-start;
@@ -343,192 +343,138 @@ a {
         width: 100%;
         padding-bottom: 10px;
     }
-
+ 
     .Index {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 8px;
     }
-
+ 
     .PP-default {
         width: 40px;
         height: 40px;
     }
-
+ 
     .Titulos {
         padding-top: 180px;
         min-height: auto;
         padding-bottom: 40px;
     }
-
+ 
     .Titulos h1 {
         font-size: 1.3rem;
         line-height: 1.5;
     }
-
+ 
     .content-text {
         padding: 24px 16px;
     }
-
+ 
     .content-text p {
         font-size: 0.95rem;
         line-height: 1.7;
         color: #333;
     }
-
+ 
 }
-
+ 
+/*Footer*/
+ 
 footer {
-    padding: 10px;
+    padding: 60px;
     width: 100%;
-    background-color: #934767;
+    background-color: #e46d9f;
     font-family: system-ui, -apple-system, sans-serif;
-<<<<<<< Updated upstream
-    color:#cdcdcd
-=======
-    color: #333;
->>>>>>> Stashed changes
+    color: #f8f2f2;
 }
-
+ 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     overflow: visible;
 }
-
+ 
 .footer-content {
     display: flex;
-<<<<<<< Updated upstream
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 18px;
-    align-items: center;
-    margin: 0;
-    font-size: 13px;
-    transform:translate(400px, -30px);
-    color: white;
-    z-index: 1000;
-}
-
-.Advice {
-    list-style:none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 18px;
-    margin: 0;
-    padding: 0; 
-    transform:translate(290px, 100px);
-    font-size: 17px;
-=======
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
     overflow: visible;
 }
-
+ 
 .footer-col {
     flex: 1;
     min-width: 250px;
->>>>>>> Stashed changes
 }
-
+ 
+.footer-social {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+ 
 .Title,
-.Title_1 {
-<<<<<<< Updated upstream
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 18px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
-    transform:translate(1000px, -80px);
-    color: white;
-    z-index: 1000;
-=======
+.Title_1,
+.Title_2 {
     font-size: 1.4rem;
     line-height: 1.4;
     margin: 0 0 15px 0;
     color: #ffffff;
     font-weight: bold;
->>>>>>> Stashed changes
 }
-
+ 
 .Advice,
 .Advice_1 {
     list-style: none;
     margin: 0;
-<<<<<<< Updated upstream
-    padding: 0; 
-    transform:translate(930px, -48px);
-    font-size: 17px;
-}
-
-.Title_2 {
-    font-size: 20px;
-    transform:translate(35px, -30px);
-    color: white;
-}
-
-.Social {
-    flex-direction: row;
-    gap: 18px;
-    margin: 0;
-    padding: 0; 
-    font-size: 18px;
-    transform:translate(650px, 60px)
-}
-
-.Face-txt {
-    transform:translate(119px, -94px);
-}
-
-.Inst-txt {
-    transform:translate(-10px, -47px);
-}
-.Twit-txt {
-    transform:translate(244px, -140px);
-}
-
-.Face-txt, .Inst-txt, .Twit-txt{
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-
-.Face-txt:hover, .Inst-txt:hover, .Twit-txt:hover {
-    color: #fff5f8;
-}
-
-.Face-IMG, .Inst-IMG, .Twit-IMG{
-    width: 20px;
-    height: 20px;
-    gap: 10px;
-    object-fit: contain;
-}
-
-.Face-IMG {
-    transform:translate(210px, -68px);
-}
-
-.Inst-IMG {
-    transform:translate(80px, -22px);
-}
-
-.Twit-IMG {
-    transform:translate(310px, -114px)
-=======
     padding: 0;
 }
-
+ 
 .Advice li,
 .Advice_1 li {
     margin-bottom: 6px;
     line-height: 1.5;
->>>>>>> Stashed changes
+}
+ 
+.Social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+ 
+.Social li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+ 
+.Face-txt,
+.Inst-txt,
+.Twit-txt {
+    font-size: 18px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+ 
+.Face-txt:hover,
+.Inst-txt:hover,
+.Twit-txt:hover {
+    color: #fff5f8;
+}
+ 
+.Face-IMG,
+.Inst-IMG,
+.Twit-IMG {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
