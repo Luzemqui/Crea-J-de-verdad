@@ -18,17 +18,22 @@ h1 {
     justify-content: center;
 }
 
+/* El cuerpo de la tarjeta GLOBAL */
+
 form {
     background: rgb(255, 255, 255);
     padding: 60px;
     width: 500px;
-    height: 650px;
+    height: 705px;
     border-radius: 20px;
     text-align: center;
     margin: 140px auto;
     outline: none;
     border: black 0.5px solid;
+    color: #da6fba
 }
+
+/* Boton para subir una sesión de usuario */
 
 .submit-bttn {
     width: 100%;
@@ -59,18 +64,20 @@ form {
 }
 
 /*No se arreglar esto*/
+/* Manu lo  arreglo! */
+/* Estilo de el boton de regresar GOLBAL */
 
 .regresar {
-    padding-right: 40px;
     background: #ffb8ea;
     color: #000000;
-    border: none;
+    border: 1px solid #d6bbce;
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    margin: auto;
 }
 
 .regresar:hover {
@@ -80,9 +87,13 @@ form {
     box-shadow: 0 0 20px rgba(255, 185, 255, 0.868);
 }
 
+/* Apartado del texto en donde se indica en donde va el Nombre,Usuario y Contraseña. */
+
 .User-text{
     padding: 10px auto;
 }
+
+/*Estilo del nombre de usuario GOLBAL */
 
 .username {
     margin: 30px auto;
@@ -91,16 +102,21 @@ form {
     width: 100%;
     height: 45px;
     padding: 10px 15px;
-    border: 1px solid #afafaf;
+    border: 1.9px solid #ffc7f8;
     outline: none;
     font-size: 18px;
+    transition: 0.8s
 }
 
-.username a:hover {
+.username:hover {
+    opacity: 80%;
     background: #ffd3f2;
-    color: #fff;
-    border-color: #f7b2f7;
+    color: #000000;
+    border-color: #ffffff;
+    padding: 15px 20px;
 }
+
+/* Estilo de la contraseña GLOBAL */
 
 .password {
     background: rgb(255, 255, 255);
@@ -108,10 +124,21 @@ form {
     width: 100%;
     height: 45px;
     padding: 10px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffc7f8;
     outline: none;
     font-size: 18px;
+    transition: 0.8s;
 }
+
+.password:hover {
+    padding: 15px 20px;
+    opacity: 80%;
+    background-color:#ffd3f2;
+    color: #000000;
+    border-color: #ffffff
+}
+
+/* Nombre del usuario (SOLO REGISTER) */
 
 .name {
     background: #ffffff;
@@ -119,7 +146,39 @@ form {
     width: 100%;
     height: 45px;
     padding: 10px 15px;
-    border: 1px solid #afafaf;
+    border: 1px solid #ffc7f8;
     outline: none;
     font-size: 18px;
+    transition: 0.8s
+}
+
+.name:hover {
+    padding: 15px 20px;
+    opacity: 80%;
+    background-color:#ffd3f2;
+    color: #000000;
+    border-color: #ffffff
+}
+
+/* Cambiar el color del texto placeholder - En caso de nesecitar quitarlo solo borrar esta parte del codigo. */
+
+.form input::placeholder {
+  color: #462443;
+  opacity: 1;
+}
+
+.resgis-txt {
+    text-decoration: none;
+    color:#da6fba;
+    transform: translate(-85px,20px);
+    transition: 0.8s;
+    font-size:17px;
+    margin:auto;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.resgis-txt:hover {
+    color:#ffd3f2;
+    transform: scale(1.02)
 }
