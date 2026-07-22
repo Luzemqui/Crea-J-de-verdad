@@ -455,20 +455,21 @@ footer {
     gap: 6px;
     text-align: center;
 }
+
  
 .Face-txt,
 .Inst-txt,
 .Twit-txt {
     font-size: 18px;
-    color: inherit;
+    color: #fff;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: 0.7s;
 }
  
-.Face-txt:hover,
-.Inst-txt:hover,
-.Twit-txt:hover {
-    color: #fff5f8;
+.Face-txt,
+.Inst-txt,
+.Twit-txt, a:hover {
+    color: #000000;
 }
  
 .Face-IMG,
@@ -477,4 +478,9 @@ footer {
     width: 20px;
     height: 20px;
     object-fit: contain;
+}
+
+.Negrita {
+    opacity: 70%;
+    font-weight: bold;
 }
