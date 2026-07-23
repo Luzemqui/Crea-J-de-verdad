@@ -9,6 +9,7 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   color: #ffd7f1;
   min-height: 100vh;
+  margin-top: 100px;
 }
  
  
@@ -51,7 +52,11 @@ body {
   box-shadow: 0 2px 8px rgba(194, 67, 106, 0.12);
   position: sticky;
   top: 0;
-  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
  
  
