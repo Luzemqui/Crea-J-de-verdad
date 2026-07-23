@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal - Canrisk</title>
-    <link rel="stylesheet" href="../../Css/Style-Info.css">
+    <link rel="stylesheet" href="Css/Style-Info.css">
     <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
-    <style>
+</head>
+<style>
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -210,10 +211,8 @@
             gap: 40px;
             align-items: center;
             background-color: transparent; 
-            border: 2px solid #f392bd;
             border-radius: 35px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
         .content-text {
@@ -252,99 +251,72 @@
                 padding: 25px;
             }
         }
+
+        .navbar-brand{
+        padding: 0 11px;
+        border-radius: 20px;
+        background: #ffffff;
+        position: fixed;
+        top: 16px;
+        left: 32px;
+        width: 220px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 1001;
+        white-space: nowrap;
+        }
     </style>
-</head>
 <body>
 
     <div class="navbar-brand">
         <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
-            <span></span>
-            <span></span>
-            <span></span>
         </button>
         <h1>Canrisk</h1>
         <img src="../../MULTIMEDIA/Canrisk LOGO.png" alt="Canrisk" class="C-L"> 
     </div>
 
-    <nav class="sidebar-menu" id="sidebarMenu">
-        <div class="sidebar-decoracion">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul class="sidebar-list">
-            <li><a href="cancer-introING.html">Introduction to cancer &rarr;</a></li>
-            <li><a href="CancerING.html" style="color: #ffffff; font-weight: 800;">Tipes of Cancer &rarr;</a></li>
-            <li><a href="psychohelpING.html">Psychological support &rarr;</a></li>
-            <li><a href="helpING.html">Help center &rarr;</a></li>
-            <li><a href="quizzING.html">Quizz &rarr;</a></li>
-        </ul>
-    </nav>
-
-    <div class="overlay-menu" id="menuOverlay"></div>
-
-    <nav class="navbar" id="mainNav">
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <ul class="Info-nav">
-            <li class="box-II"><h4><a href="../INGLES/PrincipalING.html">Homepage</a></h4></li>
-            <li class="box-II"><a href="../INGLES/aboutusENG.html"><h4>About Us</h4></a></li>
-            <li class="box-II"><a href="../INGLES/ContactoING.html"><h4>Cotact us</h4></a></li>
-        </ul>
-
-        <div class="right-group">
-            <ul class="Index">
-                <li class="box-I"><a href="../../HTML/INGLES/loginING.html"><h4>Log in</h4></a></li>
-                <li class="box-I"><a href="../../HTML/INGLES/registerING.html"><h4>Sign in</h4></a></li>
-            </ul>
-            <div class="Photo">
-                <img src="../../MULTIMEDIA/profile.png" class="PP-default">
-            </div>
-        </div>
 
     </nav>
-
     <header class="hero-section">
         <div class="hero-container">
-            <h1 class="hero-title">Assessment, Support, and Hope</h1>
+            <h1 class="hero-title">Canrisk, tu sitio web informativo sobre el cancer.</h1>
             <p class="hero-subtitle">
-               Welcome to Canrisk. We are a platform dedicated to providing prevention tools, emotional support, and assistance for young people and families facing cancer.
+                Bienvenido a Canrisk. Somos una plataforma dedicada a brindar herramientas de prevención, soporte emocional y asistencia para jóvenes y familias enfrentando procesos oncológicos.
+                <br>
+                <N class="Negrita">Esta plataforma NO reemplaza la ayuda medica de un profesional.</N>
             </p>
-            <a href="../../HTML/INGLES/CancerING.html" class="btn-cancer">
-                <span>Knowing the types of cancer</span> &rarr;
+            <a href="/HTML/ESPAÑOL/register.html" class="btn-cancer">
+                <span>Registrate para saber más </span> &rarr;
             </a>
         </div>
     </header>
 
     <section class="info-row-container">
-        <h2 class="info-row-title">Accompaniment on the Journey</h2>
+        <h2 class="info-row-title">¿Cual es nuestro objetivo?</h2>
         <div class="fila-texto-img">
             <div class="content-text">
                 <div class="Start">
                     <p>
-                        To support someone with cancer, the key is authentic presence and avoiding forced positivity that invalidates their fears
-                        Listen actively without judgment, allowing the person to safely express their sadness or anger. Instead of asking
-                        "How can I help?" offers specific actions such as bringing food, cleaning, or running specific errands.
+                        Buscamos dar concientización sobre los diferentes tipos de cancer y como apoyar a familiares que sufren de
+                        estas enfermedades, podiendo brindar ayuda economica tanto como psicologica.
                     </p>
                     <p style="margin-top: 15px;">
-                       Always respect her autonomy, treating her as the person she is and not just as a patient undergoing treatment. Avoid giving unsolicited medical advice or sharing stories of other cases that might create unnecessary pressure. Silent support is often more comforting than platitudes or motivational speeches. 
+                        También respetamos la privacidad de todas las personas que buscan algún tipo de ayuda en nuestro
+                        sitio web, por otro lado apoyamos a las personas que no tienen muchos recursos para pagar sus 
+                        tratamientos, y asi no sigan sufriendo a la larga y puedan vivir una vida digna.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Registrate este mismo dia en la pagina web de Canrisk para apoyar a personas que
+                        realmente lo nesecitan!
                     </p>
                 </div>
             </div>
 
-            <div class="IMG">
-                <img src="../../MULTIMEDIA/image 5.png" alt="Acompañamiento y Empatía" class="IMG-TXT">
-            </div>
         </div>
     </section>
-
-    <script>
+<script>
         const btn = document.getElementById('hamburgerBtn');
         const nav = document.getElementById('mainNav');
 
@@ -367,30 +339,33 @@
         sidebarBtn.addEventListener('click', toggleSidebar);
         menuOverlay.addEventListener('click', toggleSidebar);
     </script>
+
+</body>
+
 <footer>
     <div class="footer-container">
         <div class="footer-content">
             <div class="footer-col">
-                <h2 class="Title">COPYRIGHT</h2>
+                <h2 class="Title">DERECHOS DE AUTOR</h2>
                 <ul class="Advice">
                     <li>&copy; Canrisk 2026</li>
-                    <li>&copy; All rights reserved to the Canrisk team</li>
-                    <li>Special thanks to the Canrisk team</li>
-                    <li>who have made this page possible.</li>
+                    <li>&copy; Todos los derechos reservados al equipo de Canrisk</li>
+                    <li>Agradecimientos especiales al equipo de Canrisk</li>
+                    <li>que han hecho esta pagina algo posible.</li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h2 class="Title_1">IMPORTANT INFORMATION</h2>
+                <h2 class="Title_1">INFORMACIÓN IMPORTANTE</h2>
                 <ul class="Advice_1">
-                    <li>This page DOES NOT replace the help of a medical professional.</li>
-                    <li>In case you have any type of emergency or a symptom you can</li>
-                    <li>rely on the different numbers of hospitals that we</li>
-                    <li>we provide, or call 911 directly.</li>
+                    <li>Esta pagina NO reemplaza la ayuda de un profesional medico.</li>
+                    <li>En caso de tener algun tipo de emergencia o un sintoma puede</li>
+                    <li>apoyarse en los diferentes números de hospitales que nosotros</li>
+                    <li>proporcionamos, o llame directamente al 911.</li>
                 </ul>
             </div>
         </div>
         <div class="footer-social">
-            <h2 class="Title_2">Canrisk social networks!</h2>
+            <h2 class="Title_2">Redes sociales de Canrisk!</h2>
             <ul class="Social">
                 <li><a href="https://www.instagram.com/canrisk/" target="_blank"><img src="../../MULTIMEDIA/instagram.png" class="Inst-IMG" alt="Instagram logo"><p class="Inst-txt">Instagram</p></a></li>
                 <li><a href="https://www.facebook.com/Canrisk-110882646091155" target="_blank"><img src="../../MULTIMEDIA/facebook.png" class="Face-IMG" alt="Facebook logo"><p class="Face-txt">Facebook</p></a></li>
@@ -399,6 +374,4 @@
         </div>
     </div>
 </footer>
-</html>
-</body>
 </html>
