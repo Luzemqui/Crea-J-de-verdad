@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequent questions</title>
+    <title>Centro de Ayuda - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
-</head>
-
-<!--Nav y Menu de hamburguesa-->
-
- <style>
+    <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
+    <style>
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -237,9 +234,39 @@
             background: linear-gradient(90deg, #f392bd, #d65a94);
             border-radius: 10px;
         }
-    </style>
+        
+.regresar{
+    margin: 20px auto 0;
+    background: #ffb8ea;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    gap: 10px;
+}
+.donar{
+    margin: 20px auto 0;
+    background: #ffb8ea;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    gap: 10px;
+}
+</style>
 </head>
 <body>
+
     <div class="navbar-brand">
         <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
             <span></span>
@@ -293,25 +320,49 @@
 
     </nav>
 
-<!---Preguntas -->
-
-<div class="Titulos">
-        <h1>Preguntas Frecuentes</h1>
+    <div class="Titulos">
+        <br>
+        <h1>Centro de ayuda a personas necesitadas</h1>
     </div>
+
 
     <div class="fila-texto-img">
         <div class="content-text">
-            <div class="Start">
-                <p> En esta parte estan las preguntas frecuentes, tambien se pueden hacer mas preguntas en el siguiente boton para acceder a un google forms</p>
-                <br>
-                <p>boton xd</p>
+            <div class="Start"> 
+                <img src="../../MULTIMEDIA/persona1.jpe" alt="Mateo Sebastián">
+         </div>
+     </div>
+    </div>
+
+    <div class="help-grid">
+        <div class="help-card">
+          
+            <div class="help-info">
+                <h3>Mateo Sebastián</h3>
+                <div class="help-desc">
+                    <strong>Nombre:</strong> Mateo Sebastián<br>
+                    <strong>Edad:</strong> 20 años<br>
+                    <strong>Tipo de cáncer:</strong> Linfoma<br>
+                    <strong>Ubicación:</strong> San Salvador, San Salvador<br>
+                    <strong>Meta:</strong> Graduarse profesionalmente de la carrera de música y especializarse en composición.<br>
+                    <strong>Teléfono:</strong> +503 7123-4567
+                </div>
+                <div class="progress-container">
+                    <span class="progress-text">Fondos recaudados: $805/$1200</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 67%;"></div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-<!--Footer-->
-
-<footer>
+    </div>
+        
+ <div class="buttons" style="display: flex; gap: 10px;"> >
+ <button class="regresar" onclick="window.history.back()">Regresar</button> 
+ <button class="donar" onclick="">Donar</button>
+ </div>
+<br>
+ <footer>
     <div class="footer-container">
         <div class="footer-content">
             <div class="footer-col">
@@ -342,7 +393,8 @@
             </ul>
         </div>
     </div>
-</footer>
+ </footer>
+    
 
     <script>
         const btn = document.getElementById('hamburgerBtn');
@@ -368,7 +420,5 @@
         menuOverlay.addEventListener('click', toggleSidebar);
     </script>
 
-
 </body>
-
 </html>
