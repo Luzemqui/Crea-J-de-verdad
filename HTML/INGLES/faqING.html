@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Frecuentes</title>
+    <title>Frequently Asked Questions</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
-</head>
+    <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-<!--Nav y Menu de hamburguesa-->
+        .main-content {
+            flex: 1;
+        }
 
- <style>
         .navbar-brand {
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 10px 20px;
         }
 
         .hamburger-sidebar-btn {
@@ -40,7 +57,6 @@
 
         .hamburger-sidebar-btn.open span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
-            background-color: #f392bd; 
         }
 
         .hamburger-sidebar-btn.open span:nth-child(2) {
@@ -49,7 +65,6 @@
 
         .hamburger-sidebar-btn.open span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
-            background-color: #f392bd; 
         }
 
         .sidebar-menu {
@@ -64,7 +79,6 @@
             transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
             z-index: 1000;
             padding: 95px 20px 30px 25px;
-            box-sizing: border-box;
             border-radius: 45px; 
         }
 
@@ -90,15 +104,9 @@
 
         .sidebar-list {
             list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
             flex-direction: column;
             gap: 15px; 
-        }
-
-        .sidebar-list li {
-            border: none;
         }
 
         .sidebar-list a {
@@ -111,7 +119,7 @@
             text-decoration: none;
             font-size: 1.15rem;
             font-weight: 700; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             transition: transform 0.2s ease;
         }
 
@@ -135,116 +143,13 @@
             display: block;
         }
 
-        .help-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-            gap: 40px;
-            padding: 50px 5% 50px 5%;
+        .action-container {
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .help-card {
-            background-color: #ffffff;
-            border: 2px solid #f392bd;
-            border-radius: 35px;
-            padding: 30px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .help-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .help-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 25px;
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .help-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .help-info {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .help-info h3 {
-            margin: 0;
-            color: #d65a94;
-            font-size: 1.4rem;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fbd7e7;
-            padding: 6px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            align-self: flex-start;
-        }
-
-        .help-desc {
-            background-color: #fdf0f5;
-            color: #555555;
-            padding: 15px 20px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .help-desc strong {
-            color: #d65a94;
-        }
-
-        .progress-container {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 5px;
-        }
-
-        .progress-text {
-            font-size: 0.85rem;
-            color: #d65a94;
-            font-weight: bold;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .progress-bar-bg {
-            width: 100%;
-            height: 14px;
-            background-color: #fbd7e7;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #ffffff;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #f392bd, #d65a94);
-            border-radius: 10px;
-        }
-
-         .action-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5% 50px 5%;
+            padding: 20px 5% 40px 5%;
             text-align: center;
         }
-/*parte del boton (modificar)*/
+
         .btn-quizz {
             display: inline-block;
             background-color: #f392bd;
@@ -266,9 +171,91 @@
             box-shadow: 0 8px 25px rgba(243, 146, 189, 0.6);
         }
 
+
+        .faq-container {
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-card {
+            background-color: #ffffff;
+            border: 3px solid #fbd7e7;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(243, 146, 189, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card[open] {
+            border-color: #f392bd;
+            box-shadow: 0 8px 20px rgba(243, 146, 189, 0.3);
+        }
+
+        .faq-summary {
+            padding: 22px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary:hover {
+            background-color: #fbd7e7;
+            color: #ffffff;
+        }
+
+        .faq-summary::after {
+            content: "▼";
+            font-size: 1rem;
+            color: #f392bd;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .faq-summary:hover::after {
+            color: #ffffff;
+        }
+
+        .faq-card[open] .faq-summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 20px 30px 25px 30px;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            border-top: 2px dashed #fbd7e7;
+            background-color: #ffffff;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #f392bd;
+            padding: 40px 5%;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
+
     <div class="navbar-brand">
         <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
             <span></span>
@@ -285,19 +272,18 @@
             <span></span>
             <span></span>
         </div>
-
         <ul class="sidebar-list">
-            <li><a href="cancer-intro.html">Introducción al cáncer &rarr;</a></li>
-            <li><a href="psycho-help.html">Apoyo psicológico &rarr;</a></li>
-            <li><a href="help.html">Centro de ayuda &rarr;</a></li>
-            <li><a href="quizz.html">Cuestionario &rarr;</a></li>
+            <li><a href="../../HTML/INGLES/cancer-introING.html">Introduction to cancer &rarr;</a></li>
+            <li><a href="../../HTML/INGLES/psychohelpING.html">Psychological support &rarr;</a></li>
+            <li><a href="../../HTML/INGLES/helpING.html">Help Center &rarr;</a></li>
+            <li><a href="../../HTML/INGLES/quizzING.html">Quizz &rarr;</a></li>
+            <li><a href="../../HTML/INGLES/faqING.html">Frequently asked questions &rarr;</a></li>
         </ul>
     </nav>
 
     <div class="overlay-menu" id="menuOverlay"></div>
 
     <nav class="navbar" id="mainNav">
-
         <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
             <span></span>
             <span></span>
@@ -305,87 +291,113 @@
         </button>
 
         <ul class="Info-nav">
-            <li class="box-II"><h4><a href="../ESPAÑOL/Principal.html">Inicio</a></h4></li>
-            <li class="box-II"><a href="../ESPAÑOL/aboutus.html"><h4>Sobre nosotros</h4></a></li>
-            <li class="box-II"><a href="../ESPAÑOL/Contacto.html"><h4>Contáctanos</h4></a></li>
+            <li class="box-II"><h4><a href="../../HTML/INGLES/PrincipalING.html">Home page</a></h4></li>
+            <li class="box-II"><a href="../../HTML/INGLES/aboutusENG.html"><h4>About us</h4></a></li>
+            <li class="box-II"><a href="../../HTML/INGLES/ContactoING.html"><h4>Contact us</h4></a></li>
         </ul>
 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="../../HTML/ESPAÑOL/login.html"><h4>Iniciar Sesión</h4></a></li>
-                <li class="box-I"><a href="../../HTML/ESPAÑOL/register.html"><h4>Registrarse</h4></a></li>
+                <li class="box-I"><a href="../../HTML/INGLES/loginING.html"><h4>Login</h4></a></li>
+                <li class="box-I"><a href="../../HTML/INGLES/registerING.html"><h4>Register</h4></a></li>
             </ul>
             <div class="Photo">
-                <img src="../../MULTIMEDIA/profile.png" class="PP-default">
+                <img src="../../MULTIMEDIA/profile.png" class="PP-default" alt="Profile photo">
             </div>
         </div>
+    </nav
 
-    </nav>
 
-<!---Preguntas -->
+   <main class="main-content">
+        <div class="Titulos">
+            <h1>Frequently Asked Questions</h1>
+        </div>
 
-<div class="Titulos">
-        <h1>Preguntas Frecuentes</h1>
-    </div>
-
-    <div class="fila-texto-img">
-        <div class="content-text">
-            <div class="Start">
-                <p>Este apartado tiene como proposito apoyar a los usuarios que tienen preguntas sobre el cáncer que no les han sido resueltas. Somos concientes que muchos usuarios que buscan información sobre el cancer, pero esta información no puede satisfacer exitosamente algunas cuestionantes que poseen sobre el cáncer, sin embargo, nosotros como equipo de canrisk buscamos solventar las dudas sobre esta enfermedad.</p>
-                <br>
-                <p>Mediante esta sección ofrecemos acceso a las preguntas mas frecuentes de nuestro sitio, y tambien brindamos la posibilidad de realizar preguntas en nuestro apartado de preguntas, las cuales seran resueltas en un lapso de tiempo de entre 1 a 7 dias, mediante gmail, despues de ingresar correctamente los datos personales para poder enviar el mensaje.</p>
+        <div class="fila-texto-img">
+            <div class="content-text">
+                <div class="Start">
+                    <p>This section aims to assist users who have unanswered questions about cancer. We recognize that while many users seek information on the subject, that information does not always fully address their concerns. Therefore, the Canrisk team seeks to provide answers regarding this disease.</p>
+                    <br>
+                    <p>In this section, we provide access to our site's most frequently asked questions. We also offer the option to submit specific questions via a dedicated form; these will be answered within 1 to 7 days via Gmail after the required information is provided.</p>
+                </div>
             </div>
         </div>
 
         <div class="action-container">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJ-OZBvG9wHPYXodas9Sprqf_2tUy8QWFEoFS1lofK0bX32g/viewform?pli=1" target="_blank" class="btn-quizz">
-            Responder Cuestionario en Google Forms &rarr;
-        </a>
-    </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJ-OZBvG9wHPYXodas9Sprqf_2tUy8QWFEoFS1lofK0bX32g/viewform?pli=1" target="_blank" class="btn-quizz">
+                Complete the Google Forms Questionnaire &rarr;
+            </a>
+        </div>
+   
+        <section class="faq-container">
+            <details class="faq-card">
+                <summary class="faq-summary">What is cancer and how does it affect the body?</summary>
+                <div class="faq-answer">
+                    <p>Cancer is a disease caused by the uncontrolled multiplication of abnormal cells in the body; these cells can invade nearby tissues and spread to other parts of the organism.</p>
+                </div>
+            </details>
 
-    
+            <details class="faq-card">
+                <summary class="faq-summary">How can I submit a question that isn't listed here?</summary>
+                <div class="faq-answer">
+                    <p>You can visit the contact section or fill out the interactive questionnaire above to send us your specific questions. Our medical team will respond to your email within 1 to 7 business days.</p>
+                </div>
+            </details>
 
+            <details class="faq-card">
+                <summary class="faq-summary">Do the answers provided replace a medical consultation?</summary>
+                <div class="faq-answer">
+                    <p>No. All information provided by Canrisk is for guidance and informational purposes only. If you experience symptoms or a medical emergency, you should immediately see a healthcare professional or call 911.</p>
+                </div>
+            </details>
 
+            <details class="faq-card">
+                <summary class="faq-summary">What should I do if I suspect I have symptoms?</summary>
+                <div class="faq-answer">
+                    <p>We recommend visiting the nearest health center or hospital for a proper physical examination and the appropriate clinical tests.</p>
+                </div>
+            </details>
+        </section>
+    </main>
 
-<!--Footer-->
-
-<footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h2 class="Title">DERECHOS DE AUTOR</h2>
-                <ul class="Advice">
-                    <li>&copy; Canrisk 2026</li>
-                    <li>&copy; Todos los derechos reservados al equipo de Canrisk. Agradecimientos especiales al equipo de Canrisk que han hecho esta página algo posible.</li>
-                </ul>
+    <!-- Footer  -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h2 class="Title">COPYRIGHT</h2>
+                    <ul class="Advice">
+                        <li>&copy; Canrisk 2026</li>
+                        <li>&copy; All rights reserved to the Canrisk team. Special thanks to the Canrisk team for making this page possible.</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2 class="Title_1">IMPORTANT INFORMATION</h2>
+                    <ul class="Advice_1">
+                        <li>This page does NOT replace professional medical advice.</li>
+                        <li>In the event of an emergency or symptoms, you may use the hospital numbers provided or call 911 directly.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h2 class="Title_1">INFORMACIÓN IMPORTANTE</h2>
-                <ul class="Advice_1">
-                    <li>Esta página NO reemplaza la ayuda de un profesional médico.</li>
-                    <li>En caso de tener algún tipo de emergencia o un síntoma puede apoyarse en los diferentes números de hospitales que nosotros proporcionamos, o llamar directamente al 911.</li>
+            <div class="footer-social">
+                <h2 class="Title_2">Canrisk's social media!</h2>
+                <ul class="Social">
+                    <li><a href="https://www.instagram.com/canrisk/" target="_blank">
+                        <img src="../../MULTIMEDIA/instagram.png" class="Inst-IMG" alt="Instagram logo">
+                        <span class="Inst-txt">Instagram</span>
+                    </a></li>
+                    <li><a href="https://www.facebook.com/Canrisk-110882646091155" target="_blank">
+                        <img src="../../MULTIMEDIA/facebook.png" class="Face-IMG" alt="Facebook logo">
+                        <span class="Face-txt">Facebook</span>
+                    </a></li>
+                    <li><a href="https://twitter.com/Canrisk1" target="_blank">
+                        <img src="../../MULTIMEDIA/gorjeo.png" class="Twit-IMG" alt="Twitter logo">
+                        <span class="Twit-txt">Twitter</span>
+                    </a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-social">
-            <h2 class="Title_2">Redes sociales de Canrisk!</h2>
-            <ul class="Social">
-                <li><a href="https://www.instagram.com/canrisk/" target="_blank">
-                    <img src="../../MULTIMEDIA/instagram.png" class="Inst-IMG" alt="Instagram logo">
-                    <span class="Inst-txt">Instagram</span>
-                </a></li>
-                <li><a href="https://www.facebook.com/Canrisk-110882646091155" target="_blank">
-                    <img src="../../MULTIMEDIA/facebook.png" class="Face-IMG" alt="Facebook logo">
-                    <span class="Face-txt">Facebook</span>
-                </a></li>
-                <li><a href="https://twitter.com/Canrisk1" target="_blank">
-                    <img src="../../MULTIMEDIA/gorjeo.png" class="Twit-IMG" alt="Twitter">
-                    <span class="Twit-txt">Twitter</span>
-                </a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         const btn = document.getElementById('hamburgerBtn');
@@ -410,8 +422,5 @@
         sidebarBtn.addEventListener('click', toggleSidebar);
         menuOverlay.addEventListener('click', toggleSidebar);
     </script>
-
-
 </body>
-
 </html>
