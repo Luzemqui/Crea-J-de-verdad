@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Canrisk</title>
     <link rel="stylesheet" href="../../Css/Style-Info.css">
-    <link rel="icon" type="image/png" href="../../MULTIMEDIA/Canrisk LOGO.png">
     <style>
-
+ 
         .contenedor-flex-lateral {
             display: flex;
             align-items: center; 
@@ -18,21 +17,21 @@
             padding: 0 50px; 
             box-sizing: border-box;
         }
-
+ 
         .bloque-tarjetas-originales {
             flex: 1.5; 
             display: flex;
             flex-direction: column;
             gap: 30px; 
         }
-
+ 
         .imagen-lateral-sobre-nosotros {
             flex: 1.1; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+ 
         .imagen-lateral-sobre-nosotros img {
             width: 100%;
             max-width: 650px; 
@@ -41,7 +40,7 @@
             border-radius: 28px; 
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
         }
-
+ 
         @media (max-width: 1100px) {
             .contenedor-flex-lateral {
                 flex-direction: column-reverse; 
@@ -49,13 +48,13 @@
                 padding: 0 24px;
             }
         }
-
+ 
         .navbar-brand {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
+ 
         .hamburger-sidebar-btn {
             background: none;
             border: none;
@@ -68,7 +67,7 @@
             padding: 0;
             z-index: 1100;
         }
-
+ 
         .hamburger-sidebar-btn span {
             display: block;
             width: 100%;
@@ -77,21 +76,21 @@
             border-radius: 2px;
             transition: all 0.3s ease;
         }
-
+ 
         .hamburger-sidebar-btn.open span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
             background-color: #f392bd; 
         }
-
+ 
         .hamburger-sidebar-btn.open span:nth-child(2) {
             opacity: 0;
         }
-
+ 
         .hamburger-sidebar-btn.open span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
             background-color: #f392bd; 
         }
-
+ 
         .sidebar-menu {
             position: fixed;
             top: 20px; 
@@ -107,11 +106,11 @@
             box-sizing: border-box;
             border-radius: 45px; 
         }
-
+ 
         .sidebar-menu.open {
             left: 20px; 
         }
-
+ 
         .sidebar-decoracion {
             position: absolute;
             top: 30px;
@@ -119,7 +118,7 @@
             display: flex;
             gap: 5px;
         }
-
+ 
         .sidebar-decoracion span {
             width: 4px;
             height: 25px;
@@ -127,7 +126,7 @@
             border-radius: 2px;
             display: block;
         }
-
+ 
         .sidebar-list {
             list-style: none;
             padding: 0;
@@ -136,11 +135,11 @@
             flex-direction: column;
             gap: 15px; 
         }
-
+ 
         .sidebar-list li {
             border: none;
         }
-
+ 
         .sidebar-list a {
             display: inline-flex;
             align-items: center;
@@ -154,12 +153,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             transition: transform 0.2s ease;
         }
-
+ 
         .sidebar-list a:hover {
             transform: translateX(5px); 
             color: #fff0f5; 
         }
-
+ 
         .overlay-menu {
             position: fixed;
             top: 0;
@@ -170,17 +169,17 @@
             display: none;
             z-index: 900;
         }
-
+ 
         .overlay-menu.show {
             display: block;
         }
     </style>
 </head>
 <body>
-
-    <div class="navbar-brand">
-
-        <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Abrir menú lateral">
+ 
+   <div class="navbar-brand">
+ 
+        <button class="hamburger-sidebar-btn" id="sidebarBtn" aria-label="Open sidebar">
             <span></span>
             <span></span>
             <span></span>
@@ -188,14 +187,14 @@
         <h1>Canrisk</h1>
         <img src="../../MULTIMEDIA/Canrisk LOGO.png" alt="Canrisk" class="C-L"> 
     </div>
-
+ 
     <nav class="sidebar-menu" id="sidebarMenu">
-        <div class="sidebar-decoracion">
+        <div class="sidebar-decoration">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
+ 
         <ul class="sidebar-list">
             <li><a href="../../HTML/INGLES/cancer-introING.html">Introduction to cancer &rarr;</a></li>
             <li><a href="../../HTML/INGLES/psychohelpING.html">Psychological support &rarr;</a></li>
@@ -204,74 +203,126 @@
             <li><a href="../../HTML/INGLES/faqING.html">Frequently asked questions &rarr;</a></li>
         </ul>
     </nav>
-
+ 
     <div class="overlay-menu" id="menuOverlay"></div>
-
+ 
     <nav class="navbar" id="mainNav">
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+ 
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
-
+ 
         <ul class="Info-nav">
-            <li><h4><a href="../INGLES/PrincipalING.html">Homepage</a></h4></li>
-            <li><h4><a href="../INGLES/aboutusENG.html">About Us</a></h4></li>
-            <li><h4><a href="../INGLES/ContactoING.html">Contact Us</a></h4></li>
+            <li class="box-II"><h4><a href="../INGLES/PrincipalING.html">Homepage</a></h4></li>
+            <li class="box-II"><a href="../INGLES/aboutusENG.html"><h4>About us</h4></a></li>
+            <li class="box-II"><a href="../INGLES/ContactoING.html"><h4>Contact us</h4></a></li>
         </ul>
-
+ 
         <div class="right-group">
             <ul class="Index">
-                <li class="box-I"><a href="../..HTML/INGLES/login.html"><h4>Log in</h4></a></li>
-                <li class="box-I"><a href="../..HTML/INGLES/register.html"><h4>Register</h4></a></li>
+                <li class="box-I"><a href="../../HTML/INGLES/loginING.html"><h4>Log in</h4></a></li>
+                <li class="box-I"><a href="../../HTML/INGLES/registerING.html"><h4>Register</h4></a></li>
             </ul>
             <div class="Photo">
                 <img src="../../MULTIMEDIA/profile.png" class="PP-default">
             </div>
         </div>
-
+ 
     </nav>
-
-    <div class="Titulos">
-        <h1>About us</h1><br>
-    </div>
-
-    <div class="contenedor-flex-lateral">
-
-        <div class="imagen-lateral-sobre-nosotros">
-            <img src="../../MULTIMEDIA/cancer imagen.jpg" alt="Ilustración Canrisk">
-        </div>
-
-        <div class="bloque-tarjetas-originales">
-            <div class="content-text">
-                <p>Canrisk is an informative website with the purpose of 
-            informing the society in an accessible and reliable way about
-            the most common types of cancer in the Salvadoran population: 
-            breast, cervical, prostate, stomach and lung cancer.
+ 
+    <header class="hero-section">
+        <div class="hero-container">
+            <br><br><br>
+            <h1 class="hero-title">About Us</h1>
+ 
+            <div class="hero-subtitle">
+                <p>Canrisk is an informational website dedicated to 
+                    informing the public in an accessible and reliable way about
+                    the most common types of cancer among the Salvadoran population: 
+                    breast, cervical, prostate, stomach, and lung cancer.
                 </p>
             </div>
-
-            <div class="content-text">
-                <p>Our project is called CANRISK because it comes from the combination of
-         two important words, which are cancer (Cáncer) and risk, 
-         giving the union Can-Risk. The fusion of both words was done to give it a
-         more unique and attractive approach for our website users.</p>
-            </div>
         </div>
-
+    </header>
+ 
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../../MULTIMEDIA/cancer imagen.jpg" alt="Description">
+        </div>
+        <div class="flip-card-back">
+          <p>Our project is named CANRISK, a combination of
+                two very important words: "cancer" and "risk,"
+                resulting in the name Can-Risk. We fused these two words
+                to create a more unique and appealing identity for our
+                website's users.</p>
+        </div>
+      </div>
     </div>
 
+
+    <div class="contenedor-flex-lateral">
+        <div class="bloque-tarjetas-originales">
+            <div class="content-text">
+                <p>Our project is named CANRISK, a combination of
+                two very important words: "cancer" and "risk,"
+                resulting in the name Can-Risk. We fused these two words
+                to create a more unique and appealing identity for our
+                website's users.</p>
+            </div>
+        </div>
+    </div>
+ 
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h2 class="Title">COPYRIGHT</h2>
+                <ul class="Advice">
+                    <li>&copy; Canrisk 2026</li>
+                    <li>&copy; All rights reserved to the Canrisk team. Special thanks to the Canrisk team for making this page possible.</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2 class="Title_1">IMPORTANT INFORMATION</h2>
+                <ul class="Advice_1">
+                    <li>This page does NOT replace professional medical advice.</li>
+                    <li>In the event of an emergency or symptoms, you can use the hospital contact numbers we provide or call 911 directly.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h2 class="Title_2">Canrisk Social Media!</h2>
+            <ul class="Social">
+                <li><a href="https://www.instagram.com/canrisk/" target="_blank">
+                    <img src="../../MULTIMEDIA/instagram.png" class="Inst-IMG" alt="Instagram logo">
+                    <span class="Inst-txt">Instagram</span>
+                </a></li>
+                <li><a href="https://www.facebook.com/Canrisk-110882646091155" target="_blank">
+                    <img src="../../MULTIMEDIA/facebook.png" class="Face-IMG" alt="Facebook logo">
+                    <span class="Face-txt">Facebook</span>
+                </a></li>
+                <li><a href="https://twitter.com/Canrisk1" target="_blank">
+                    <img src="../../MULTIMEDIA/gorjeo.png" class="Twit-IMG" alt="Twitter">
+                    <span class="Twit-txt">Twitter</span>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+ 
     <script>
         const btn = document.getElementById('hamburgerBtn');
         const nav = document.getElementById('mainNav');
-
+ 
         btn.addEventListener('click', () => {
             const isOpen = nav.classList.toggle('open');
             btn.classList.toggle('open', isOpen);
             btn.setAttribute('aria-expanded', isOpen);
         });
-
+ 
         const sidebarBtn = document.getElementById('sidebarBtn');
         const sidebarMenu = document.getElementById('sidebarMenu');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -280,42 +331,10 @@
             sidebarBtn.classList.toggle('open', isOpen);
             menuOverlay.classList.toggle('show', isOpen);
         };
-
+ 
         sidebarBtn.addEventListener('click', toggleSidebar);
         menuOverlay.addEventListener('click', toggleSidebar);
     </script>
-<footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h2 class="Title">COPYRIGHT</h2>
-                <ul class="Advice">
-                    <li>&copy; Canrisk 2026</li>
-                    <li>&copy; All rights reserved to the Canrisk team</li>
-                    <li>Special thanks to the Canrisk team</li>
-                    <li>who have made this page possible.</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h2 class="Title_1">IMPORTANT INFORMATION</h2>
-                <ul class="Advice_1">
-                    <li>This page DOES NOT replace the help of a medical professional.</li>
-                    <li>In case you have any type of emergency or a symptom you can</li>
-                    <li>rely on the different numbers of hospitals that we</li>
-                    <li>we provide, or call 911 directly.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-social">
-            <h2 class="Title_2">Canrisk social networks!</h2>
-            <ul class="Social">
-                <li><a href="https://www.instagram.com/canrisk/" target="_blank"><img src="../../MULTIMEDIA/instagram.png" class="Inst-IMG" alt="Instagram logo"><p class="Inst-txt">Instagram</p></a></li>
-                <li><a href="https://www.facebook.com/Canrisk-110882646091155" target="_blank"><img src="../../MULTIMEDIA/facebook.png" class="Face-IMG" alt="Facebook logo"><p class="Face-txt">Facebook</p></a></li>
-                <li><a href="https://twitter.com/Canrisk1" target="_blank"><img src="../../MULTIMEDIA/gorjeo.png" class="Twit-IMG" alt="Twitter"><p class="Twit-txt">Twitter</p></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-</html>
+ 
 </body>
 </html>
